@@ -23,68 +23,273 @@
     <div class="overlay"></div>
   </header>
 
-  <!-- About -->
-  <section class="content-section" style="background-color:#fff;" id="about">
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-          <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-            <a href="https://unsplash.com/">Unsplash</a>!</p>
-          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
-        </div>
+  <!-- Categories -->
+  <section style="background-color:#212121 !important;" class="content-section bg-primary text-white">
+      <div class="content-section-heading">
+        <h2 style="color:#fff; text-align:center;" class="mb-5">Trending Categories</h2>
+      </div>
+    <div class="container cat-container">
+<div class="row">
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i style="width:100%; height:100%;" class="fas fa-code"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Development
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
       </div>
     </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-briefcase"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Business
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-tv"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Technology
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-palette"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Art & Design
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-comment-dollar"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Marketing
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-user-friends"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Personal Dev.
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-camera"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Photography
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-music"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Music
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
   </section>
 
   <!-- Services -->
   <section class="content-section bg-primary text-white text-center" id="services">
-    <div class="container">
       <div class="content-section-heading">
-        <h3 class="text-secondary mb-0">Services</h3>
-        <h2 class="mb-5">What We Offer</h2>
+        <h3 class="text-secondary mb-0">Courses</h3>
+        <h2 style="color:#212121;" class="mb-5">Recommended for you</h2>
       </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-screen-smartphone"></i>
-          </span>
-          <h4>
-            <strong>Responsive</strong>
-          </h4>
-          <p class="text-faded mb-0">Looks great on any screen size!</p>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-pencil"></i>
-          </span>
-          <h4>
-            <strong>Redesigned</strong>
-          </h4>
-          <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-like"></i>
-          </span>
-          <h4>
-            <strong>Favorited</strong>
-          </h4>
-          <p class="text-faded mb-0">Millions of users
-            <i class="fas fa-heart"></i>
-            Start Bootstrap!</p>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-mustache"></i>
-          </span>
-          <h4>
-            <strong>Question</strong>
-          </h4>
-          <p class="text-faded mb-0">I mustache you a question...</p>
+      <div class="course-wrapper">
+  <div class="container">
+ <div class="row">
+  <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+    <a class="course-anchor" href="#">
+      <div class="course-card">
+        <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+        <div class="course-card__inner">
+          <span class="u-d--block course-card__instructor">Ralph Smith</span>
+          <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
+          <div class="star-rating">
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+          </div>
+          <div class="course-card__meta-wrapper">
+            <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
+            <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
+          </div>
+          <div class="product-price">
+            $200.00
+          </div>
         </div>
       </div>
-    </div>
+    </a>
+   </div>
+   <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+    <a class="course-anchor" href="#">
+      <div class="course-card">
+        <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+        <div class="course-card__inner">
+          <span class="u-d--block course-card__instructor">Ralph Smith</span>
+          <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
+          <div class="star-rating">
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+          </div>
+          <div class="course-card__meta-wrapper">
+            <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
+            <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
+          </div>
+          <div class="product-price">
+            $200.00
+          </div>
+        </div>
+      </div>
+    </a>
+   </div>
+   <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+    <a class="course-anchor" href="#">
+      <div class="course-card">
+        <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+        <div class="course-card__inner">
+          <span class="u-d--block course-card__instructor">Ralph Smith</span>
+          <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
+          <div class="star-rating">
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+          </div>
+          <div class="course-card__meta-wrapper">
+            <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
+            <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
+          </div>
+          <div class="product-price">
+            $200.00
+          </div>
+        </div>
+      </div>
+    </a>
+   </div>
+   <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+    <a class="course-anchor" href="#">
+      <div class="course-card">
+        <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+        <div class="course-card__inner">
+          <span class="u-d--block course-card__instructor">Ralph Smith</span>
+          <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
+          <div class="star-rating">
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+          </div>
+          <div class="course-card__meta-wrapper">
+            <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
+            <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
+          </div>
+          <div class="product-price">
+            $200.00
+          </div>
+        </div>
+      </div>
+    </a>
+   </div>
+   
+  </div>
+</div>
+</div>
   </section>
 
   <!-- Callout -->
@@ -151,15 +356,6 @@
           </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Call to Action -->
-  <section class="content-section bg-primary text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-      <a href="#" class="btn btn-xl btn-light mr-4">Click Me!</a>
-      <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
     </div>
   </section>
   <!-- Footer -->

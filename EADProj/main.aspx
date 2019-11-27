@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu.Master" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="EADProj.main" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu1.Master" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="EADProj.main" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
       <link href="css/mainPage.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">

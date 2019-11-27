@@ -125,6 +125,13 @@
     <Compile Include="menu.Master.designer.cs">
       <DependentUpon>menu.Master</DependentUpon>
     </Compile>
+    <Compile Include="menu1.Master.cs">
+      <DependentUpon>menu1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu1.Master.designer.cs">
+      <DependentUpon>menu1.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>
@@ -146,6 +153,7 @@
     <Content Include="js\bootstrap.bundle.min.js.map" />
     <Content Include="js\bootstrap.js.map" />
     <Content Include="js\bootstrap.min.js.map" />
+    <Content Include="menu1.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

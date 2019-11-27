@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu.Master" AutoEventWireup="true" CodeBehind="courseRecc.aspx.cs" Inherits="EADProj.courseRecc" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu1.Master" AutoEventWireup="true" CodeBehind="courseRecc.aspx.cs" Inherits="EADProj.courseRecc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/courseRecc.css" rel="stylesheet">
 </asp:Content>

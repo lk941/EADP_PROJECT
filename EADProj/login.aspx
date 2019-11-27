@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="EADProj.login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu1.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="EADProj.login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="/css/signin.css">

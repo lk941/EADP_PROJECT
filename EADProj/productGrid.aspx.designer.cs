@@ -11,7 +11,7 @@ namespace EADProj
 {
 
 
-    public partial class register
+    public partial class productGrid
     {
     }
 }

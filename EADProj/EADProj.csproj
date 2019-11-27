@@ -75,9 +75,11 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\courseRecc.css" />
+    <Content Include="css\courseReccomend.css" />
     <Content Include="css\mainPage.css" />
     <Content Include="css\menu.css" />
     <Content Include="css\mPage.css" />
+    <Content Include="css\productGrid.css" />
     <Content Include="css\signin.css" />
     <Content Include="img\bg-callout.jpg" />
     <Content Include="img\bg-masthead.jpg" />
@@ -93,6 +95,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="login.aspx" />
     <Content Include="main.aspx" />
+    <Content Include="productGrid.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -124,6 +127,13 @@
     </Compile>
     <Compile Include="menu.Master.designer.cs">
       <DependentUpon>menu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="productGrid.aspx.cs">
+      <DependentUpon>productGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productGrid.aspx.designer.cs">
+      <DependentUpon>productGrid.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">

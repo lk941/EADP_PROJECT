@@ -23,6 +23,160 @@
     <div class="overlay"></div>
   </header>
 
+<<<<<<< HEAD
+  <!-- Categories -->
+  <section style="background-color:#212121 !important;" class="content-section bg-primary text-white">
+      <div class="content-section-heading">
+        <h2 style="color:#fff; text-align:center;" class="mb-5">Trending Categories</h2>
+      </div>
+    <div class="container cat-container">
+<div class="row">
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i style="width:100%; height:100%;" class="fas fa-code"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Development
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-briefcase"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Business
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-tv"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Technology
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-palette"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Art & Design
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-comment-dollar"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Marketing
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-user-friends"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Personal Dev.
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-camera"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Photography
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+  <div class="col-4 col-sm-4 col-md-4 col-lg-3">
+  <div class="custom-card">
+    <div class="small-image-thumbnail">
+      <i class="fas fa-music"></i>
+    </div>
+    <div class="small-text-container">
+      <span class="small-category-title">
+        Music
+      </span>
+      <div class="custom-create-button">
+        <span class="create-text">
+          GO
+        </span>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+=======
   <!-- About -->
   <section class="content-section" style="background-color:#fff;" id="about">
     <div class="container text-center">
@@ -35,10 +189,124 @@
         </div>
       </div>
     </div>
+>>>>>>> Yappy
   </section>
 
   <!-- Services -->
   <section class="content-section bg-primary text-white text-center" id="services">
+<<<<<<< HEAD
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">Courses</h3>
+        <h2 style="color:#212121;" class="mb-5">Recommended for you</h2>
+      </div>
+      <div class="course-wrapper">
+  <div class="container">
+ <div class="row">
+  <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+    <a class="course-anchor" href="#">
+      <div class="course-card">
+        <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+        <div class="course-card__inner">
+          <span class="u-d--block course-card__instructor">Ralph Smith</span>
+          <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
+          <div class="star-rating">
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+          </div>
+          <div class="course-card__meta-wrapper">
+            <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
+            <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
+          </div>
+          <div class="product-price">
+            $200.00
+          </div>
+        </div>
+      </div>
+    </a>
+   </div>
+   <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+    <a class="course-anchor" href="#">
+      <div class="course-card">
+        <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+        <div class="course-card__inner">
+          <span class="u-d--block course-card__instructor">Ralph Smith</span>
+          <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
+          <div class="star-rating">
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+          </div>
+          <div class="course-card__meta-wrapper">
+            <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
+            <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
+          </div>
+          <div class="product-price">
+            $200.00
+          </div>
+        </div>
+      </div>
+    </a>
+   </div>
+   <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+    <a class="course-anchor" href="#">
+      <div class="course-card">
+        <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+        <div class="course-card__inner">
+          <span class="u-d--block course-card__instructor">Ralph Smith</span>
+          <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
+          <div class="star-rating">
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+          </div>
+          <div class="course-card__meta-wrapper">
+            <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
+            <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
+          </div>
+          <div class="product-price">
+            $200.00
+          </div>
+        </div>
+      </div>
+    </a>
+   </div>
+   <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+    <a class="course-anchor" href="#">
+      <div class="course-card">
+        <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+        <div class="course-card__inner">
+          <span class="u-d--block course-card__instructor">Ralph Smith</span>
+          <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
+          <div class="star-rating">
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="fas fa-star"></span>
+            <span class="far fa-star"></span>
+            <span class="far fa-star"></span>
+          </div>
+          <div class="course-card__meta-wrapper">
+            <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
+            <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
+          </div>
+          <div class="product-price">
+            $200.00
+          </div>
+        </div>
+      </div>
+    </a>
+   </div>
+   
+  </div>
+</div>
+</div>
+=======
     <div class="container">
       <div class="content-section-heading">
         <h3 class="text-secondary mb-0">Services</h3>
@@ -85,6 +353,7 @@
         </div>
       </div>
     </div>
+>>>>>>> Yappy
   </section>
 
   <!-- Callout -->
@@ -153,6 +422,8 @@
       </div>
     </div>
   </section>
+<<<<<<< HEAD
+=======
 
   <!-- Call to Action -->
   <section class="content-section bg-primary text-white">
@@ -162,6 +433,7 @@
       <a href="#" class="btn btn-xl btn-dark">Look at Me!</a>
     </div>
   </section>
+>>>>>>> Yappy
   <!-- Footer -->
   <footer class="footer text-center">
     <div class="container">

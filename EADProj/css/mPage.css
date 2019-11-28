@@ -2,6 +2,16 @@
 
 
 .service-icon {
+<<<<<<< HEAD
+    background-color: #fff;
+    color: #1D809F;
+    height: 7rem;
+    width: 7rem;
+    display: block;
+    line-height: 7.5rem;
+    font-size: 2.25rem;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+=======
   background-color: #fff;
   color: #1D809F;
   height: 7rem;
@@ -10,10 +20,113 @@
   line-height: 7.5rem;
   font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+>>>>>>> Yappy
 }
 
 
 @media (min-width: 992px) {
+<<<<<<< HEAD
+    .portfolio-item {
+        max-width: none;
+        margin: 0;
+    }
+
+        .portfolio-item .caption {
+            -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
+            -webkit-clip-path: inset(0px);
+            clip-path: inset(0px);
+        }
+
+            .portfolio-item .caption .caption-content {
+                transition: opacity 0.25s;
+                margin-left: 5rem;
+                margin-right: 5rem;
+                margin-bottom: 5rem;
+            }
+
+        .portfolio-item img {
+            -webkit-transition: -webkit-clip-path 0.25s ease-out;
+            -webkit-clip-path: inset(-1px);
+            clip-path: inset(-1px);
+        }
+
+        .portfolio-item:hover img {
+            -webkit-clip-path: inset(2rem);
+            clip-path: inset(2rem);
+        }
+
+        .portfolio-item:hover .caption {
+            background-color: rgba(29, 128, 159, 0.9);
+            -webkit-clip-path: inset(2rem);
+            clip-path: inset(2rem);
+        }
+}
+
+footer.footer {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+    footer.footer .social-link {
+        display: block;
+        height: 4rem;
+        width: 4rem;
+        line-height: 4.3rem;
+        font-size: 1.5rem;
+        background-color: #1D809F;
+        transition: background-color 0.15s ease-in-out;
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+        footer.footer .social-link:hover {
+            background-color: #155d74;
+            text-decoration: none;
+        }
+
+a {
+    color: #1D809F;
+}
+
+    a:hover, a:focus, a:active {
+        color: #155d74;
+    }
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #155d74 !important;
+    border-color: #155d74 !important;
+}
+
+.btn-secondary {
+    background-color: #ecb807 !important;
+    border-color: #ecb807 !important;
+    color: #fff !important;
+}
+
+    .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+        background-color: #ba9106 !important;
+        border-color: #ba9106 !important;
+    }
+
+.btn-dark {
+    color: #fff !important;
+}
+
+.btn {
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+}
+
+.bg-primary {
+    background-color: #1D809F !important;
+}
+
+.text-primary {
+    color: #1D809F !important;
+}
+
+.text-secondary {
+    color: #ecb807 !important;
+=======
   .portfolio-item {
     max-width: none;
     margin: 0;
@@ -109,6 +222,7 @@ a:hover, a:focus, a:active {
 
 .text-secondary {
   color: #ecb807 !important;
+>>>>>>> Yappy
 }
 
 .service-icon {
@@ -130,6 +244,33 @@ a:hover, a:focus, a:active {
     margin: auto auto 1rem;
 }
 
+<<<<<<< HEAD
+    .portfolio-item .caption {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(33, 37, 41, 0.2);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+        .portfolio-item .caption .caption-content {
+            color: #fff;
+            margin: auto 2rem 2rem;
+        }
+
+            .portfolio-item .caption .caption-content h2 {
+                font-size: 0.8rem;
+                text-transform: uppercase;
+            }
+
+            .portfolio-item .caption .caption-content p {
+                font-weight: 300;
+                font-size: 1.2rem;
+            }
+=======
 .portfolio-item .caption {
     display: flex;
     height: 100%;
@@ -155,6 +296,7 @@ a:hover, a:focus, a:active {
     font-weight: 300;
     font-size: 1.2rem;
 }
+>>>>>>> Yappy
 
 @media (min-width: 992px) {
     .portfolio-item {
@@ -202,26 +344,44 @@ a:hover, a:focus, a:active {
     padding-top: 17.5vh;
     padding-right: 20%;
     padding-bottom: 8rem;
+<<<<<<< HEAD
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("https://images.pexels.com/photos/3060277/pexels-photo-3060277.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+=======
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("https://images.pexels.com/photos/48126/books-education-school-literature-48126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+>>>>>>> Yappy
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+<<<<<<< HEAD
+    .masthead h1 {
+        font-size: 3rem;
+        margin: 0;
+        padding: 0;
+    }
+=======
 .masthead h1 {
     font-size: 3rem;
     margin: 0;
     padding: 0;
 }
+>>>>>>> Yappy
 
 @media (min-width: 992px) {
     .masthead {
         height: 50vh;
     }
 
+<<<<<<< HEAD
+        .masthead h1 {
+            font-size: 3rem;
+        }
+=======
     .masthead h1 {
         font-size: 5.5rem;
     }
+>>>>>>> Yappy
 }
 
 body,
@@ -277,6 +437,22 @@ footer.footer {
         line-height: 4.3rem;
         font-size: 1.5rem;
         background-color: #1D809F;
+<<<<<<< HEAD
+        transition: back line-height: 45px;
+    }
+
+.scroll-to-top:focus, .scroll-to-top:hover {
+    color: white;
+}
+
+.scroll-to-top:hover {
+    background: #343a40;
+}
+
+.scroll-to-top i {
+    font-weight: 800;
+}
+=======
         transition: back
     line-height: 45px;
 }
@@ -292,6 +468,7 @@ footer.footer {
     .scroll-to-top i {
         font-weight: 800;
     }
+>>>>>>> Yappy
 
 footer.footer {
     padding-top: 5rem;
@@ -316,18 +493,31 @@ footer.footer {
 
 .callout {
     padding: 15rem 0;
+<<<<<<< HEAD
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("https://images.pexels.com/photos/733852/pexels-photo-733852.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+=======
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("https://static.vecteezy.com/packs/media/components/home/masthead/img/lavakidneys_800x400@2x-2db5e5a0c944e2b16a11a18674570f76.jpg");
+>>>>>>> Yappy
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+<<<<<<< HEAD
+    .callout h2 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        display: block;
+        max-width: 50rem;
+    }
+=======
 .callout h2 {
     font-size: 3.5rem;
     font-weight: 700;
     display: block;
     max-width: 50rem;
 }
+>>>>>>> Yappy
 
 a {
     color: #1D809F;
@@ -354,10 +544,17 @@ a {
     color: #fff !important;
 }
 
+<<<<<<< HEAD
+    .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+        background-color: #ba9106 !important;
+        border-color: #ba9106 !important;
+    }
+=======
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
     background-color: #ba9106 !important;
     border-color: #ba9106 !important;
 }
+>>>>>>> Yappy
 
 .btn-dark {
     color: #fff !important;
@@ -369,7 +566,11 @@ a {
 }
 
 .bg-primary {
+<<<<<<< HEAD
+    background-color: #fff !important;
+=======
     background-color: #1D809F !important;
+>>>>>>> Yappy
 }
 
 .text-primary {
@@ -396,9 +597,15 @@ a {
     color: #ffa31a;
 }
 
+<<<<<<< HEAD
+    .searchTerm:focus {
+        color: #ffa31a;
+    }
+=======
 .searchTerm:focus {
     color: #ffa31a;
 }
+>>>>>>> Yappy
 
 .searchButton {
     width: 40px;
@@ -418,4 +625,353 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+<<<<<<< HEAD
 }
+
+.course-anchor:hover {
+    text-decoration: none;
+}
+
+.course-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-card {
+    margin-bottom: 10%;
+    border: 1px solid #eee;
+    margin-right: 15px;
+    box-shadow: 0 2px 5px 0 rgba(225, 225, 225, 0.25);
+    background-color: #fff;
+    text-decoration: none !important;
+}
+
+    .course-card:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: all 0.3s ease-in-out;
+        text-decoration: none !important;
+    }
+
+.course-card__image {
+    width: 100%;
+    height: 173px;
+}
+
+    .course-card__image img {
+        width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+
+.course-card__inner {
+    padding: 15px;
+    text-align:left;
+}
+
+.course-card__instructor {
+    font-size: 15px;
+    font-family: "Open Sans";
+    color: #212121;
+    opacity: 0.6;
+    text-align: left;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+h3.course-card__title {
+    width: 220px;
+    color: #212121;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 7px 0;
+}
+
+.course-card__meta-wrapper {
+    border-bottom: 1px solid #eee;
+    padding: 7px 0;
+    display: flex;
+    align-items: center;
+}
+
+.course-card__difficulty,
+.course-card__time {
+    margin-right: 20px;
+    color: #4a4a4a;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.course-card__difficulty i,
+.course-card__time i {
+    margin-right: 7px;
+    font-size: 18px;
+}
+
+.product-price {
+    padding: 7px 0;
+    text-decoration: none;
+    color: #ffa31a;
+    font-size: 15px;
+}
+
+.star-rating {
+    color: #ffa31a;
+}
+
+
+.container {
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.new-category-card {
+    width: 212px;
+    height: 99px;
+    box-shadow: 0 2px 10px rgba(35, 35, 35, 0.3);
+    border-radius: 4px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-card {
+    width: 212px;
+    height: 49px;
+    box-shadow: 0 2px 10px rgba(35, 35, 35, 0.3);
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    margin: 5%;
+}
+
+.image-thumbnail {
+    width: 77px;
+    height: 77px;
+    background-color: #d8d8d8;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    margin-left: 11px;
+    margin-right: 0;
+}
+
+.small-image-thumbnail {
+    font-size: 25px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    margin-left: 11px;
+    margin-right: 0;
+}
+
+.text-container {
+    width: 124px;
+    height: 99px;
+    position: relative;
+}
+
+.small-text-container {
+    width: 124px;
+    height: 49px;
+    position: relative;
+}
+
+.category-title {
+    position: absolute;
+    color: #ffa31a;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 700;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    transition: 0.3s transform ease-in-out;
+}
+
+.small-category-title {
+    position: absolute;
+    color: #212121;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    transition: 0.3s transform ease-in-out;
+}
+
+.create-button {
+    position: absolute;
+    bottom: 22px;
+    width: 66px;
+    height: 22px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    border-radius: 11px;
+    background-color: #ffa31a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s opacity ease-in-out;
+}
+
+.coming-soon-button {
+    position: absolute;
+    bottom: 22px;
+    width: 120px;
+    height: 22px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    border-radius: 11px;
+    background-color: #d3d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s opacity ease-in-out;
+}
+
+.custom-create-button {
+    position: absolute;
+    right: -60px;
+    bottom: 14px;
+    width: 66px;
+    height: 22px;
+    opacity: 0;
+    border-radius: 11px;
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s opacity ease-in-out;
+}
+
+.create-text {
+    position: absolute;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 700;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    transition: 0.3s transform ease-in-out;
+}
+
+.coming-soon-text {
+    position: absolute;
+    color: #a3a2a2;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 700;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    transition: 0.3s transform ease-in-out;
+}
+
+.new-category-card {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+    .new-category-card .image-thumbnail,
+    .new-category-card .text-container {
+        transition: 0.3s;
+    }
+
+    .new-category-card:hover {
+        padding: 4px;
+        width: 216px;
+        height: 103px;
+    }
+
+        .new-category-card:hover .category-title {
+            transform: translateY(-22px);
+        }
+
+        .new-category-card:hover .create-button {
+            opacity: 1;
+        }
+
+        .new-category-card:hover .coming-soon-button {
+            opacity: 1;
+        }
+
+        .new-category-card:hover .image-thumbnail,
+        .new-category-card:hover .text-container {
+            transform: scale(0.9);
+        }
+
+.custom-card {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+    .custom-card .image-thumbnail,
+    .custom-card .text-container {
+        transition: 0.3s;
+    }
+
+    .custom-card:hover {
+        width: 234px;
+    }
+
+        .custom-card:hover .category-title {
+            transform: translateY(-22px);
+        }
+
+        .custom-card:hover .custom-create-button {
+            opacity: 1;
+        }
+
+        .custom-card:hover .coming-soon-button {
+            opacity: 1;
+        }
+
+        .custom-card:hover .image-thumbnail,
+        .custom-card:hover .text-container {
+            transform: scale(0.9);
+        }
+=======
+}
+>>>>>>> Yappy

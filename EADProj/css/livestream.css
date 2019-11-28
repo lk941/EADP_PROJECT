@@ -1,0 +1,19 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+    font-family: "Open Sans";
+}
+
+body {
+}
+
+.headerText {
+    text-align: center;
+    color: #faa213
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

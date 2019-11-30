@@ -103,7 +103,9 @@
 
         .header-menu ul li a:hover,
         .header-menu ul li a.menu-active {
-          color: #ffa31a;
+            color: #fff !important;
+            background-color: #ffa31a !important;
+            border-color: #ffa31a !important;
         }
         .head-social-link ul li a:hover {
           color: #ffa31a;
@@ -114,13 +116,14 @@
             position: relative;
           }
           .responsive-menu {
-            display: block;
+            display: flex;
+            float: left;
           }
           .responsive-sub-menu {
             display: none;
           }
           .responsive-sub-menu {
-            display: block;
+            display: block !important;
             position: absolute;
             top: 65px;
             background: #fff;
@@ -133,6 +136,7 @@
             transform: translateX(0px);
           }
           .logo {
+              display: none;
             order: 2;
           }
           .responsive-sub-menu.responsive-active-sub-menu > li {
@@ -150,32 +154,52 @@
         @media screen and (max-width: 767px) {
         } /*max-width:767px*/
 
+       
+       .menuBtn {
+           color: white !important;
+           background: none !important;
+           border: none !important;
+           margin: 0 auto !important;
+           padding: 0 15px !important;
+           text-align: center !important;
+           width: 100% !important;
+       }
+
+
+
 
     </style>
 </head>
 <body id="page-top" class="index">
-    <div class="header">
-        <div class="logo">
-          <h2 class="logo">Likey</h2>
-        </div>
+    <asp:Panel ID="menuPanel" runat="server">
+        <div class="header">
+            <div class="logo">
+              <h2 class="logo">Likey</h2>
+            </div>
 
-        <div class="header-menu">
-          <div class="responsive-menu"><i class="fa fa-bars"></i></div>
-          <ul class="responsive-sub-menu menuUL" style="z-index: 100;">
-            <li><a href="/main.aspx">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">features</a></li>
-          </ul>
-        </div>
+            
+            <div class="header-menu" style="width: 100%;">
+              <div class="responsive-menu"><i class="fa fa-bars"></i></div>
+                <form runat="server">
+                    <ul class="responsive-sub-menu menuUL" style="z-index: 100; display: flex; float: left;">
+                        <li style="display: flex;"><asp:Button runat="server" ID="homeBtn" class="menuBtn" Text="Home" OnClientClick="redirectHome()" OnClick="homeBtn_Click" /></li>
+                        <li style="display: flex;"><asp:Button runat="server" ID="shopAllBtn" class="menuBtn" Text="Shop" OnClientClick="redirectShop()" OnClick="shopAllBtn_Click" /></li>
+                        <li style="display: flex;"><asp:Button id="btn" runat="server" class="menuBtn" Text="Features" /></li>
+                    </ul>
+                    
+                    <div class="head-social-link" style="float: right;">
+                        <ul class="menuUL">
+                            <li><asp:Button class="menuBtn" ID="loginBtn" runat="server" Text="Login" OnClick="redirectLogin" /></li>
+                            <li><asp:Button class="menuBtn" ID="registerBtn" runat="server" Text="Register" OnClick="redirectRegister"/></li>
+                            <li><asp:LinkButton ID="ProfileIcon" Visible="False" runat="server" CssClass="btn btn-small btn-primary"><i class="fas fa-user-alt"></i>&nbsp;Profile</asp:LinkButton></li>
+                        </ul>
 
-        <div class="head-social-link">
-          <ul class="menuUL">
-            <li><a href="/login.aspx">Login</a></li>
-            <li><a href="/register.aspx">Register</a></li>
-          </ul>
+                    </div>
+                </form>
+                
+            </div>
         </div>
-
-      </div>
+    </asp:Panel>
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>

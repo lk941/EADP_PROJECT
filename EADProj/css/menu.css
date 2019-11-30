@@ -84,3 +84,14 @@
     width:6vh;
     height:6vh;
 }
+
+.menuBtn {
+    color: white !important;
+    background: none !important;
+    border: none !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+

@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="APP_Data\MyDB.mdf" />
+    <Content Include="APP_Data\MyDB_log.ldf">
+      <DependentUpon>MyDB.mdf</DependentUpon>
+    </Content>
     <Content Include="courseRecc.aspx" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
@@ -78,6 +82,7 @@
     <Content Include="css\mainPage.css" />
     <Content Include="css\menu.css" />
     <Content Include="css\mPage.css" />
+    <Content Include="css\productPage.css" />
     <Content Include="css\signin.css" />
     <Content Include="img\bg-callout.jpg" />
     <Content Include="img\bg-masthead.jpg" />
@@ -93,10 +98,12 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="login.aspx" />
     <Content Include="main.aspx" />
+    <Content Include="productPage.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\User.cs" />
     <Compile Include="courseRecc.aspx.cs">
       <DependentUpon>courseRecc.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -104,6 +111,7 @@
     <Compile Include="courseRecc.aspx.designer.cs">
       <DependentUpon>courseRecc.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DLL\UserDAO.cs" />
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -124,6 +132,13 @@
     </Compile>
     <Compile Include="menu.Master.designer.cs">
       <DependentUpon>menu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="productPage.aspx.cs">
+      <DependentUpon>productPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productPage.aspx.designer.cs">
+      <DependentUpon>productPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
@@ -154,6 +169,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

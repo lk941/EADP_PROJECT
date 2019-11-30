@@ -721,22 +721,22 @@ h3.course-card__title {
         height: 103px;
     }
 
-        .new-category-card:hover .category-title {
-            transform: translateY(-22px);
-        }
+.new-category-card:hover .category-title {
+    transform: translateY(-22px);
+}
 
-        .new-category-card:hover .create-button {
-            opacity: 1;
-        }
+.new-category-card:hover .create-button {
+    opacity: 1;
+}
 
-        .new-category-card:hover .coming-soon-button {
-            opacity: 1;
-        }
+.new-category-card:hover .coming-soon-button {
+    opacity: 1;
+}
 
-        .new-category-card:hover .image-thumbnail,
-        .new-category-card:hover .text-container {
-            transform: scale(0.9);
-        }
+.new-category-card:hover .image-thumbnail,
+.new-category-card:hover .text-container {
+    transform: scale(0.9);
+}
 
 .custom-card {
     transition: 0.3s;

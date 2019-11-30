@@ -224,9 +224,14 @@ a {
         height: 50vh;
     }
 
-        .masthead h1 {
-            font-size: 3rem;
-        }
+    .masthead h1 {
+        font-size: 3rem;
+    }
+
+    .custom-card {
+        width: 15em !important;
+    }
+
 }
 
 body,

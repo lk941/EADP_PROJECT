@@ -10,6 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+<<<<<<< HEAD
     <div class="container">
 
         <div class='login'>
@@ -39,3 +40,34 @@
         </form>
     </div>
 </asp:Content>
+=======
+<div class='login'>
+  <h2>Register</h2>
+	<form action="/user/register" method="post">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" name="name" value="" required>
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="email" name="email" class="form-control" value="" required>
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" name="password" class="form-control" value="" required>
+		</div>
+		<div class="form-group">
+			<label for="password2">Confirm Password</label>
+			<input type="password" name="password2" class="form-control" value="" required>
+		</div>
+    	<button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: #ffa31a;">Sign Up</button>
+		</form>
+
+      <label style="display: block;margin-top: 1em; text-align:center;"><a href="/showLogin">Already have an account?</a></label>
+</div>
+</form>
+
+</div> 
+
+</asp:Content>
+>>>>>>> parent of f6fd3f5... Product Grid Page + Filter UI

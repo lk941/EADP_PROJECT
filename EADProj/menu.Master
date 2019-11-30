@@ -104,7 +104,11 @@
 
         .header-menu ul li a:hover,
         .header-menu ul li a.menu-active {
+<<<<<<< HEAD
             color: #ffa31a;
+=======
+          color: #ffa31a;
+>>>>>>> parent of f6fd3f5... Product Grid Page + Filter UI
         }
 
         .head-social-link ul li a:hover {
@@ -112,6 +116,7 @@
         }
 
         @media screen and (max-width: 1199px) {
+<<<<<<< HEAD
             .header-menu {
                 position: relative;
             }
@@ -152,21 +157,85 @@
             }
         }
         /*max-width:1199px*/
+=======
+          .header-menu {
+            position: relative;
+          }
+          .responsive-menu {
+            display: block;
+          }
+          .responsive-sub-menu {
+            display: none;
+          }
+          .responsive-sub-menu {
+            display: block;
+            position: absolute;
+            top: 65px;
+            background: #fff;
+            order: 1;
+            transform: translateX(-160px);
+            transition: 0.7s linear;
+          }
+
+          .responsive-active-sub-menu {
+            transform: translateX(0px);
+          }
+          .logo {
+            order: 2;
+          }
+          .responsive-sub-menu.responsive-active-sub-menu > li {
+            width: 100%;
+            padding: 5px 0;
+          }
+          .head-social-link {
+            order: 3;
+          }
+        } /*max-width:1199px*/
+>>>>>>> parent of f6fd3f5... Product Grid Page + Filter UI
 
         @media screen and (max-width: 991px) {
         }
         /*max-width:991px*/
 
         @media screen and (max-width: 767px) {
+<<<<<<< HEAD
         }
         /*max-width:767px*/
+=======
+        } /*max-width:767px*/
+
+
+>>>>>>> parent of f6fd3f5... Product Grid Page + Filter UI
     </style>
 </head>
 <body id="page-top" class="index">
     <div class="header">
         <div class="logo">
+<<<<<<< HEAD
             <h2 class="logo">Likey</h2>
         </div>
+=======
+          <h2 class="logo">Likey</h2>
+        </div>
+
+        <div class="header-menu">
+          <div class="responsive-menu"><i class="fa fa-bars"></i></div>
+          <ul class="responsive-sub-menu menuUL" style="z-index: 100;">
+            <li><a href="/main.aspx">home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">features</a></li>
+          </ul>
+        </div>
+
+        <div class="head-social-link">
+          <ul class="menuUL">
+            <li><a href="/login.aspx">Login</a></li>
+            <li><a href="/register.aspx">Register</a></li>
+          </ul>
+        </div>
+
+      </div>
+>>>>>>> parent of f6fd3f5... Product Grid Page + Filter UI
 
         <div class="header-menu">
             <div class="responsive-menu"><i class="fa fa-bars"></i></div>

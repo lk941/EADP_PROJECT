@@ -79,10 +79,11 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\courseRecc.css" />
+    <Content Include="css\courseReccomend.css" />
     <Content Include="css\mainPage.css" />
     <Content Include="css\menu.css" />
     <Content Include="css\mPage.css" />
-    <Content Include="css\productPage.css" />
+    <Content Include="css\productGrid.css" />
     <Content Include="css\signin.css" />
     <Content Include="img\bg-callout.jpg" />
     <Content Include="img\bg-masthead.jpg" />
@@ -98,7 +99,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="login.aspx" />
     <Content Include="main.aspx" />
-    <Content Include="productPage.aspx" />
+    <Content Include="productGrid.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -133,12 +134,12 @@
     <Compile Include="menu.Master.designer.cs">
       <DependentUpon>menu.Master</DependentUpon>
     </Compile>
-    <Compile Include="productPage.aspx.cs">
-      <DependentUpon>productPage.aspx</DependentUpon>
+    <Compile Include="productGrid.aspx.cs">
+      <DependentUpon>productGrid.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="productPage.aspx.designer.cs">
-      <DependentUpon>productPage.aspx</DependentUpon>
+    <Compile Include="productGrid.aspx.designer.cs">
+      <DependentUpon>productGrid.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
@@ -169,7 +170,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="APP_Start\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -185,7 +188,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51229</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51229/</IISUrl>
+          <IISUrl>http://localhost:5000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

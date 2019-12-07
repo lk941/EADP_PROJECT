@@ -1,10 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu.Master" AutoEventWireup="true" CodeBehind="productPage.aspx.cs" Inherits="EADProj.productPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu.Master" AutoEventWireup="true" CodeBehind="productGrid.aspx.cs" Inherits="EADProj.productGrid" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
-    <link href="css/productPage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/productGrid.css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
+
 <!-- header -->
 <div style="margin: 0; padding: 0; max-width: 100%; width: 100%;" class="container jumbo-container">
   <div class="jumbotron jumbo-header">
@@ -245,7 +246,7 @@
     <div class="row" style="border-top: 1px solid #eee;">
       <h3 style="display:block; width: 100%; padding-top: 3vh; padding-bottom: 3vh; text-align: center;">Featured Tutors</h3>
       <div class="cards">
-        <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="col-sm-12 col-lg-3">
           <div class="card">
             <img src="https://cdn140.picsart.com/302202574114211.png?r1024x1024" alt="">
             <h4>Uzumaki Mario</h4>
@@ -253,7 +254,7 @@
             <button>See More</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="col-sm-12 col-lg-3">
           <div class="card">
             <img src="https://i.pinimg.com/originals/bf/85/da/bf85daf12641323bc231a526c71c7a57.png " alt="">
             <h4>Elizabeth J. Vetter</h4>
@@ -261,7 +262,7 @@
             <button>See More</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="col-sm-12 col-lg-3">
           <div class="card">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrHuM5-QbXi5_UGCyCSo0SRi2x5_tzgNrTVqXeclvNEnl8FPJwHQ&s" alt="">
             <h4>Lillian S. Rodriguez</h4>
@@ -269,7 +270,7 @@
             <button>See More</button>
           </div>
         </div>
-        <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="col-sm-12 col-lg-3">
           <div class="card">
             <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto/gigs/131845221/original/5ed9b69a319671a6485a58248502107569a56744/photoshop-you-into-anime-scenes-or-with-an-anime-girlfriend.jpg" alt="">
             <h4>Mentaiko Salmon</h4>
@@ -283,7 +284,12 @@
 
   </div>
 
-<!--Courses -->
+  <!--Courses -->
+  <div class="course-wrapper">
+
+  </div>
+
+  <!--Courses -->
   <div class="course-wrapper">
     <div class="container" style="border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
       <h3 style="padding-top: 3vh; padding-bottom: 3vh; text-align: center;">All Courses</h3>

@@ -34,7 +34,7 @@ namespace EADProj
                 else
                 {
                     errLabel.Visible = true;
-                    errLabel.Text = "User does not exist";
+                    errLabel.Text = "Error logging in.";
                 }
             }
         }

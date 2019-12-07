@@ -23,7 +23,7 @@
     </asp:ContentPlaceHolder>
 
     <style>
-       * {
+         * {
           box-sizing: border-box;
           margin: 0;
           padding: 0;
@@ -167,43 +167,43 @@
 
 
 
-
     </style>
 </head>
 <body id="page-top" class="index">
-    <asp:Panel ID="menuPanel" runat="server">
-        <div class="header">
-            <div class="logo">
-              <h2 class="logo">Likey</h2>
-            </div>
-
-            
-            <div class="header-menu" style="width: 100%;">
-              <div class="responsive-menu"><i class="fa fa-bars"></i></div>
-                <form runat="server">
-                    <ul class="responsive-sub-menu menuUL" style="z-index: 100; display: flex; float: left;">
-                        <li style="display: flex;"><asp:Button runat="server" ID="homeBtn" class="menuBtn" Text="Home" OnClientClick="redirectHome()" OnClick="homeBtn_Click" /></li>
-                        <li style="display: flex;"><asp:Button runat="server" ID="shopAllBtn" class="menuBtn" Text="Shop" OnClientClick="redirectShop()" OnClick="shopAllBtn_Click" /></li>
-                        <li style="display: flex;"><asp:Button id="btn" runat="server" class="menuBtn" Text="Features" /></li>
-                    </ul>
-                    
-                    <div class="head-social-link" style="float: right;">
-                        <ul class="menuUL">
-                            <li><asp:Button class="menuBtn" ID="loginBtn" runat="server" Text="Login" OnClick="redirectLogin" /></li>
-                            <li><asp:Button class="menuBtn" ID="registerBtn" runat="server" Text="Register" OnClick="redirectRegister"/></li>
-                            <li><asp:LinkButton ID="ProfileIcon" Visible="False" runat="server" CssClass="btn btn-small btn-primary"><i class="fas fa-user-alt"></i>&nbsp;Profile</asp:LinkButton></li>
-                        </ul>
-
-                    </div>
-                </form>
-                
-            </div>
+<asp:Panel ID="menuPanel" runat="server">
+    <div class="header">
+        <div class="logo">
+            <h2 class="logo">Likey</h2>
         </div>
-    </asp:Panel>
 
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
 
+        <div class="header-menu" style="width: 100%;">
+          <div class="responsive-menu"><i class="fa fa-bars"></i></div>
+        <form runat="server">
+            <ul class="responsive-sub-menu menuUL" style="z-index: 100; display: flex; float: left;">
+                <li style="display: flex;"><asp:Button runat="server" ID="homeBtn" class="menuBtn" Text="Home" OnClientClick="redirectHome()" OnClick="homeBtn_Click" /></li>
+                <li style="display: flex;"><asp:Button runat="server" ID="shopAllBtn" class="menuBtn" Text="Shop" OnClientClick="redirectShop()" OnClick="shopAllBtn_Click" /></li>
+                <li style="display: flex;"><asp:Button id="btn" runat="server" class="menuBtn" Text="Features" /></li>
+            </ul>
+                    
+            <div class="head-social-link" style="float: right;">
+                <ul class="menuUL">
+                    <li><asp:Button class="menuBtn" ID="loginBtn" runat="server" Text="Login" OnClick="redirectLogin" /></li>
+                    <li><asp:Button class="menuBtn" ID="registerBtn" runat="server" Text="Register" OnClick="redirectRegister"/></li>
+                    <li><asp:LinkButton ID="ProfileIcon" Visible="False" runat="server" CssClass="btn btn-small btn-primary"><i class="fas fa-user-alt"></i>&nbsp;Profile</asp:LinkButton></li>
+                </ul>
+
+            </div>
+        </form>
+                
+    </div>
+</div>
+</asp:Panel>
+
+    
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
@@ -221,6 +221,5 @@
         $(".responsive-sub-menu").toggleClass("responsive-active-sub-menu");
       });
     });
-
 </script>
 </html>

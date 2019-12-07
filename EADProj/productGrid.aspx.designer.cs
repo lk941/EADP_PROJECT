@@ -11,7 +11,7 @@ namespace EADProj
 {
 
 
-    public partial class courseRecc
+    public partial class productGrid
     {
     }
 }

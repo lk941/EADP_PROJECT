@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/menu.Master" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="EADProj.register" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <link rel="stylesheet" href="/css/signin.css">
@@ -8,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css?family="Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-<div class="container">
 
-<div class='login'>
-  <h2>Register</h2>
-	<form id="register_form" runat="server">
+    <div class="container">
+
+        <div class='login'>
+            <h2>Register</h2>
+            <form id="register_form" runat="server">
 		<div class="form-group">
 			<label for="name">Name</label>
             <asp:RequiredFieldValidator ID="nameValidator" runat="server" ControlToValidate="nameTB" ErrorMessage="Name is required." ForeColor="Red">*</asp:RequiredFieldValidator>

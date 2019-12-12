@@ -369,32 +369,34 @@
             </div>
           </a>
         </div>
-        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-          <a class="course-anchor" href="#">
-            <div class="course-card">
-              <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
-              <div class="course-card__inner">
-                <span class="u-d--block course-card__instructor">Ralph Smith</span>
-                <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
-                <div class="star-rating">
-                  <span class="fas fa-star"></span>
-                  <span class="fas fa-star"></span>
-                  <span class="fas fa-star"></span>
-                  <span class="far fa-star"></span>
-                  <span class="far fa-star"></span>
-                </div>
-                <div class="course-card__meta-wrapper">
-                  <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
-                  <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
-                </div>
-                <div class="product-price">
-                  $200.00
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
+          <% foreach(var x in lesson) { %>
 
+              <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                  <a class="course-anchor" href="#">
+                    <div class="course-card">
+                      <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+                      <div class="course-card__inner">
+                        <span class="u-d--block course-card__instructor">Ralph Smith</span>
+                        <h3 class="course-card__title"><%= x.title %></h3>
+                        <div class="star-rating">
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="fas fa-star"></span>
+                          <span class="far fa-star"></span>
+                          <span class="far fa-star"></span>
+                        </div>
+                        <div class="course-card__meta-wrapper">
+                          <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i><%= x.difficulty %></span>
+                          <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i><%= x.duration %></span>
+                        </div>
+                        <div class="product-price">
+                          $<%= x.price %>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+             </div>
+          <% } %>
       </div>
     </div>
   </div>

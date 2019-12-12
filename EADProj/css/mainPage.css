@@ -1,6 +1,5 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-
 .service-icon {
     background-color: #fff;
     color: #1D809F;
@@ -11,7 +10,6 @@
     font-size: 2.25rem;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
-
 
 @media (min-width: 992px) {
     .portfolio-item {
@@ -522,7 +520,6 @@ h3.course-card__title {
 .star-rating {
     color: #ffa31a;
 }
-
 
 .cat-container {
     margin: auto;

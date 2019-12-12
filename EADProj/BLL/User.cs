@@ -12,10 +12,31 @@ namespace EADProj.BLL
         public string name { get; set; }
         public string password { get; set; }
         public string email { get; set; }
+        public bool emailVerified { get; set; }
+        public string hash { get; set; }
 
         public User()
         {
 
+        }
+
+        public User(string Id, string Name, string Password, string Email, bool emailVerified, string hash)
+        {
+            this.id = Id;
+            this.name = Name;
+            this.password = Password;
+            this.email = Email;
+            this.emailVerified = emailVerified;
+            this.hash = hash;
+        }
+
+        public User(string Id, string Name, string Password, string Email, bool emailVerified)
+        {
+            this.id = Id;
+            this.name = Name;
+            this.password = Password;
+            this.email = Email;
+            this.emailVerified = emailVerified;
         }
 
         public User(string Id, string Name, string Password, string Email)
@@ -76,10 +97,22 @@ namespace EADProj.BLL
             }
         }
 
+        public User GetUserByHash(string hash)
+        {
+            UserDAO dao = new UserDAO();
+            return dao.GetUserByHash(hash);
+        }
+
         public User GetUserByEmail(string email)
         {
             UserDAO dao = new UserDAO();
             return dao.GetUserByEmail(email);
+        }
+
+        public void VerifyUser(string email)
+        {
+            UserDAO dao = new UserDAO();
+            dao.VerifyUser(email);
         }
 
     }

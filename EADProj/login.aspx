@@ -41,6 +41,7 @@
                 </div>
                 <asp:ValidationSummary ID="loginSummary" runat="server" DisplayMode="List" />
                 <asp:Label ID="errLabel" runat="server" Text="" ForeColor="Red"></asp:Label>
+                <asp:Button ID="GoogleBtn" runat="server" Text="Google" OnClick="GoogleBtn_Click" />
             </form>
         </div>
     </div>

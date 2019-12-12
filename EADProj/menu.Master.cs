@@ -27,7 +27,7 @@ namespace EADProj
 
         protected void shopAllBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("productPage.aspx");
+            Response.Redirect("productGrid.aspx");
         }
 
         protected void redirectLogin(object sender, EventArgs e)

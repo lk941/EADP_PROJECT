@@ -41,7 +41,8 @@ namespace EADProj
                 {
                     user.InsertUser(nameTB.Text, emailTB.Text, passwordTB.Text);
                     errLabel.Visible = false;
-                    Response.Redirect("login.aspx");
+                    string url = "login.aspx?registered=False";
+                    Response.Redirect(url);
                 }
                 else
                 {

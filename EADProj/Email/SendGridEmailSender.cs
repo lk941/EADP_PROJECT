@@ -22,8 +22,8 @@ namespace EADProj.Email
 
         public static async Task Execute(string email, string name, string content)
         {
-            //var apiKey = Environment.GetEnvironmentVariable("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");
-            var apiKey = "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";
+            //var apiKey = Environment.GetEnvironmentVariable("API_KEY");
+            var apiKey = "API_KEY";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("likey@likey.com", "Likey (Please Do Reply)");
             var subject = "Just to verify that it's you.";

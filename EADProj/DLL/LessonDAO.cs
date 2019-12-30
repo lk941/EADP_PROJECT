@@ -40,5 +40,18 @@ namespace EADProj.DLL
                 return l1;
             }
         }
+
+        public int GetLengthOfDB()
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            string sqlStmt = "Select * from Lesson";
+            SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            return rec_cnt;
+        }
     }
 }

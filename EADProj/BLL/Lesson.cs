@@ -45,5 +45,11 @@ namespace EADProj.BLL
             LessonDAO dao = new LessonDAO();
             return dao.GetLessonById(id);
         }
+
+        public int GetLengthOfDB()
+        {
+            LessonDAO dao = new LessonDAO();
+            return dao.GetLengthOfDB();
+        }
     }
 }

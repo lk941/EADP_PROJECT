@@ -22,43 +22,95 @@ namespace EADProj
 
             if (Session["id"] != null)
             {
-                //Find the top 5 using machine learning
-                MLContext mlContext = new MLContext();
-                (IDataView trainingDataView, IDataView testDataView) = LoadData(mlContext);
-                ITransformer model = BuildAndTrainModel(mlContext, trainingDataView);
-                EvaluateModel(mlContext, testDataView, model);
-                //UseModelForSinglePrediction(mlContext, model);
-                var top5recc = UseModelForBest5Prediction(mlContext, model);
-                SaveModel(mlContext, trainingDataView.Schema, model);
-
-                for (var i =0; i < top5recc.Count; i++)
+                try
                 {
-                    System.Diagnostics.Debug.WriteLine(top5recc[i].ToString());
-                    l1 = l1.GetLessonById(top5recc[i].ToString());
-                    lesson.Add(new Lesson()
+                    //Find the top 5 using machine learning
+                    MLContext mlContext = new MLContext();
+                    (IDataView trainingDataView, IDataView testDataView) = LoadData(mlContext);
+                    ITransformer model = BuildAndTrainModel(mlContext, trainingDataView);
+                    EvaluateModel(mlContext, testDataView, model);
+                    //UseModelForSinglePrediction(mlContext, model);
+                    var top5recc = UseModelForBest5Prediction(mlContext, model);
+                    SaveModel(mlContext, trainingDataView.Schema, model);
+
+                    for (var i = 0; i < top5recc.Count; i++)
                     {
-                        title = l1.title,
-                        price = l1.price,
-                        rating = l1.rating,
-                        difficulty = l1.difficulty,
-                        duration = l1.duration
-                    });
+                        System.Diagnostics.Debug.WriteLine(top5recc[i].ToString());
+                        l1 = l1.GetLessonById(top5recc[i].ToString());
+                        lesson.Add(new Lesson()
+                        {
+                            title = l1.title,
+                            price = l1.price,
+                            rating = l1.rating,
+                            difficulty = l1.difficulty,
+                            duration = l1.duration
+                        });
+                    }
+                } catch
+                {
+                    List<int> lessonId = new List<int>();
+                    l1 = new Lesson();
+                    for (var j = 0; j < 5; j++)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Starting While Loop");
+                        while (true)
+                        {
+                            int rando = RandomNumber(1, l1.GetLengthOfDB());
+                            l1 = l1.GetLessonById(rando.ToString());
+
+                            System.Diagnostics.Debug.WriteLine("Random Number " + rando);
+
+                            if (lessonId.Contains(rando) == false)
+                            {
+                                System.Diagnostics.Debug.WriteLine("Lesson contain" + lesson.Contains(l1));
+                                lesson.Add(new Lesson()
+                                {
+                                    title = l1.title,
+                                    price = l1.price,
+                                    rating = l1.rating,
+                                    difficulty = l1.difficulty,
+                                    duration = l1.duration
+                                });
+                                lessonId.Add(rando);
+
+                                break;
+                            }
+                        }
+
+                    }
                 }
 
             } else
             {
-                for (var i = 0; i < 5; i++)
+                List<int> lessonId = new List<int>();
+                l1 = new Lesson();
+                for (var j = 0; j < 5; j++)
                 {
-                    var theIndex = i + 1;
-                    l1 = l1.GetLessonById(theIndex.ToString());
-                    lesson.Add(new Lesson()
+                    System.Diagnostics.Debug.WriteLine("Starting While Loop");
+                    while (true)
                     {
-                        title = l1.title,
-                        price = l1.price,
-                        rating = l1.rating,
-                        difficulty = l1.difficulty,
-                        duration = l1.duration
-                    });
+                        int rando = RandomNumber(1, l1.GetLengthOfDB());
+                        l1 = l1.GetLessonById(rando.ToString());
+
+                        System.Diagnostics.Debug.WriteLine("Random Number " + rando);
+
+                        if (lessonId.Contains(rando) == false)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Lesson contain" + lesson.Contains(l1));
+                            lesson.Add(new Lesson()
+                            {
+                                title = l1.title,
+                                price = l1.price,
+                                rating = l1.rating,
+                                difficulty = l1.difficulty,
+                                duration = l1.duration
+                            });
+                            lessonId.Add(rando);
+
+                            break;
+                        }
+                    }
+
                 }
 
             }
@@ -175,6 +227,13 @@ namespace EADProj
 
             Console.WriteLine("=============== Saving the model to a file ===============");
             mlContext.Model.Save(model, trainingDataViewSchema, modelPath);
+        }
+
+        // Generate a random number between two numbers  
+        public int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
         }
 
         /* Reference to predict a user to one movie

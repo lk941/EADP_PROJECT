@@ -14,6 +14,7 @@ namespace EADProj.BLL
         public string email { get; set; }
         public bool emailVerified { get; set; }
         public string hash { get; set; }
+        public string imageURL { get; set; }
 
         public User()
         {
@@ -47,11 +48,19 @@ namespace EADProj.BLL
             this.email = Email;
         }
 
-        public User(string Name, string Password, string Email)
+        public User(string Name, string Email, string ImageURL, bool emailVerified)
         {
             this.name = Name;
-            this.password = Password;
             this.email = Email;
+            this.imageURL = ImageURL;
+            this.emailVerified = emailVerified;
+        }
+
+        public User(string Name, string Email, string Password)
+        {
+            this.name = Name;
+            this.email = Email;
+            this.password = Password;
         }
 
         public bool InsertUser(string name, string email, string password)
@@ -113,6 +122,20 @@ namespace EADProj.BLL
         {
             UserDAO dao = new UserDAO();
             dao.VerifyUser(email);
+        }
+
+        public User OAuthLogin(string name, string email, string imageURL)
+        {
+            User u1 = new User(name, email, imageURL, true);
+
+            UserDAO dao = new UserDAO();
+            return dao.oauthLogin(u1);
+        }
+
+        public bool checkOauthUser(string email)
+        {
+            UserDAO dao = new UserDAO();
+            return dao.checkOauthUser(email);
         }
 
     }

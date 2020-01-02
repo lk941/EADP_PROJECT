@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="/css/bootstrap.css" />
+    <meta name="google-signin-client_id" content="1017274687523-js2ki3r7ugcfhc1eorej4i8jmpg7ji6j.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 
     <title>Learn With Likey!</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -191,8 +194,10 @@
                     <li><asp:Button class="menuBtn" ID="loginBtn" runat="server" Text="Login" OnClick="redirectLogin" /></li>
                     <li><asp:Button class="menuBtn" ID="registerBtn" runat="server" Text="Register" OnClick="redirectRegister"/></li>
                     <li><asp:LinkButton ID="ProfileIcon" Visible="False" runat="server" CssClass="btn btn-small btn-primary"><i class="fas fa-user-alt"></i>&nbsp;Profile</asp:LinkButton></li>
-                </ul>
+                    <li><asp:LinkButton OnClientClick="signOut()" ID="Logout" Visible="False" runat="server" CssClass="btn btn-small btn-primary"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</asp:LinkButton></li>
 
+                </ul>
+                <div class="g-signin2" data-onsuccess="onSignIn" style="display:none;"></div>
             </div>
         </form>
                 
@@ -215,11 +220,36 @@
 <script src="/js/bootstrap.bundle.js"></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
 
+
+
 <script>
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        }); 
+
+         $.ajax({  
+             type: "POST",  
+             url: "login.aspx/logout",  
+             contentType: "application/json; charset=utf-8",  
+             dataType: "json",
+             success: function (response) {  
+                 var ret = response.d; 
+                 window.location.href = "http://localhost:5000/main.aspx";
+             },  
+             error: function (response) {  
+                 alert("FAILED");
+             }  
+         });  
+    }
+
     $(document).ready(function() {
       $(".responsive-menu").click(function() {
         $(".responsive-sub-menu").toggleClass("responsive-active-sub-menu");
       });
     });
 </script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 </html>

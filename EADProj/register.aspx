@@ -38,7 +38,7 @@
         <asp:Button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: #ffa31a;" ID="registerBtn" runat="server" Text="Sign Up" OnClick="registerBtn_Click" />
 		
 
-      <label style="display: block;margin-top: 1em; text-align:center;"><a href="/showLogin">Already have an account?</a></label>
+      <label style="display: block;margin-top: 1em; text-align:center;"><a href="localhost:5000/login.aspx">Already have an account?</a></label>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" DisplayMode="List" />
         <asp:Label ID="errLabel" runat="server" Visible="False" ForeColor="Red"></asp:Label>
     </form>

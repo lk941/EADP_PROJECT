@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Web;
+using System.Web.UI;
+using System.Web.Services;
+using System.Web.UI.WebControls;
+using System.Web.Script.Services;
 
 namespace EADProj
 {
@@ -11,12 +16,14 @@ namespace EADProj
                 loginBtn.Visible = false;
                 registerBtn.Visible = false;
                 ProfileIcon.Visible = true;
+                Logout.Visible = true;
             }
             else
             {
                 loginBtn.Visible = true;
                 registerBtn.Visible = true;
                 ProfileIcon.Visible = false;
+                Logout.Visible = false;
             }
         }
         
@@ -39,5 +46,7 @@ namespace EADProj
         {
             Response.Redirect("register.aspx");
         }
+
+        
     }
 }

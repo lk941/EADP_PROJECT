@@ -9,6 +9,9 @@ using System.Data.SqlClient;
 using System.Text;
 using System.Security.Cryptography;
 using EADProj.Email;
+using System.Web.UI;
+using System.Web.Services;
+using System.Web.UI.WebControls;
 
 namespace EADProj.DLL
 {
@@ -73,6 +76,80 @@ namespace EADProj.DLL
             }
             
             myConn.Close();
+
+        }
+
+        public User oauthLogin(User user)
+        {
+            if (GetUserByEmail(user.email) == null)
+            {
+                string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+                SqlConnection myConn = new SqlConnection(DBConnect);
+
+                string sqlStmtInsert = "INSERT INTO [User] (name, email, imageURL, emailVerified) VALUES (@paraName, @paraEmail, @paraImage, @paraVerified)";
+                SqlCommand sqlCmd = new SqlCommand(sqlStmtInsert, myConn);
+
+                sqlCmd.Parameters.AddWithValue("@paraName", user.name);
+                sqlCmd.Parameters.AddWithValue("@paraEmail", user.email);
+                sqlCmd.Parameters.AddWithValue("@paraImage", user.imageURL);
+                sqlCmd.Parameters.AddWithValue("@paraVerified", user.emailVerified);
+
+                myConn.Open();
+
+                int k = sqlCmd.ExecuteNonQuery();
+
+                if (k != 0)
+                {
+                    System.Diagnostics.Debug.WriteLine("User inserted into database");
+
+                }
+
+                myConn.Close();
+
+                var u1 = new User(user.name, user.email, user.imageURL);
+
+                return u1;
+
+            } else
+            {
+                var u1 = GetUserByEmail(user.email);
+
+                return u1;
+            }
+
+        }
+
+        public bool checkOauthUser(string email)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            string sqlStmt = "Select * from [User] where email = @paraEmail";
+            SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
+            da.SelectCommand.Parameters.AddWithValue("@paraEmail", email);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt > 0)
+            {
+                DataRow row = ds.Tables[0].Rows[0];
+                string pw = row["password"].ToString();
+                //System.Diagnostics.Debug.WriteLine(pw);
+                if (pw.Length < 1)
+                {
+                    //System.Diagnostics.Debug.WriteLine("User is an oauth user");
+                    return true;
+                } else
+                {
+                    //System.Diagnostics.Debug.WriteLine("User is not an oauth user");
+                    return false;
+                }
+            }
+            else
+            {
+                //System.Diagnostics.Debug.WriteLine("User's Account doesnt exist");
+                return false;
+            }
 
         }
 

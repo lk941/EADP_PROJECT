@@ -146,7 +146,7 @@ namespace EADProj
 
             var trainerEstimator = estimator.Append(mlContext.Recommendation().Trainers.MatrixFactorization(options));
 
-            Console.WriteLine("=============== Training the model ===============");
+            System.Diagnostics.Debug.WriteLine("=============== Training the model ===============");
             ITransformer model = trainerEstimator.Fit(trainingDataView);
 
             return model;
@@ -155,11 +155,11 @@ namespace EADProj
 
         protected void EvaluateModel(MLContext mlContext, IDataView testDataView, ITransformer model)
         {
-            Console.WriteLine("=============== Evaluating the model ===============");
+            System.Diagnostics.Debug.WriteLine("=============== Evaluating the model ===============");
             var prediction = model.Transform(testDataView);
             var metrics = mlContext.Regression.Evaluate(prediction, labelColumnName: "Label", scoreColumnName: "Score");
-            Console.WriteLine("Root Mean Squared Error : " + metrics.RootMeanSquaredError.ToString());
-            Console.WriteLine("RSquared: " + metrics.RSquared.ToString());
+            System.Diagnostics.Debug.WriteLine("Root Mean Squared Error : " + metrics.RootMeanSquaredError.ToString());
+            System.Diagnostics.Debug.WriteLine("RSquared: " + metrics.RSquared.ToString());
         }
 
 
@@ -225,7 +225,7 @@ namespace EADProj
         {
             var modelPath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "APP_Data", "LessonRecommenderModel.zip");
 
-            Console.WriteLine("=============== Saving the model to a file ===============");
+            System.Diagnostics.Debug.WriteLine("=============== Saving the model to a file ===============");
             mlContext.Model.Save(model, trainingDataViewSchema, modelPath);
         }
 

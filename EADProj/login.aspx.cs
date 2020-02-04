@@ -39,8 +39,8 @@ namespace EADProj
                 errLabel.Text = "Email Verified. Please log in to your account.";
             }
 
-            string ClientId = "YOUR_CLIENTID";
-            string ClientSecret = "YOUR_CLIENTSECRET";
+            string ClientId = "1017274687523-js2ki3r7ugcfhc1eorej4i8jmpg7ji6j.apps.googleusercontent.com";
+            string ClientSecret = "qijA8w0VDQmQmn0h90zil7pD";
 
             Panel panel1 = (Panel)Master.FindControl("menuPanel");
             panel1.Visible = false;

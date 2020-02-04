@@ -65,7 +65,7 @@ namespace EADProj.BLL
 
         public bool InsertUser(string name, string email, string password)
         {
-            User u1 = new User(name, password, email);
+            User u1 = new User(name, email, password);
             UserDAO dao = new UserDAO();
 
             if (dao.CheckByEmail(email) == false)

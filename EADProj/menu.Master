@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-reboot.min.css" />
     <link rel="stylesheet" href="/css/bootstrap.css" />
-    <meta name="google-signin-client_id" content="1017274687523-js2ki3r7ugcfhc1eorej4i8jmpg7ji6j.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="YOUR_CLIENTID">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 

@@ -7,6 +7,7 @@ using Microsoft.ML;
 using Microsoft.ML.Trainers;
 using System.IO;
 using System.Reflection;
+using EADProj.Search;
 
 namespace EADProj
 {
@@ -19,40 +20,91 @@ namespace EADProj
 
             lesson = new List<Lesson>();
             Lesson l1 = new Lesson();
-
-            if (Session["id"] != null)
+            var searchQS = "";
+            try
             {
-                try
-                {
-                    //Find the top 5 using machine learning
-                    MLContext mlContext = new MLContext();
-                    (IDataView trainingDataView, IDataView testDataView) = LoadData(mlContext);
-                    ITransformer model = BuildAndTrainModel(mlContext, trainingDataView);
-                    EvaluateModel(mlContext, testDataView, model);
-                    //UseModelForSinglePrediction(mlContext, model);
-                    var top5recc = UseModelForBest5Prediction(mlContext, model);
-                    SaveModel(mlContext, trainingDataView.Schema, model);
+                searchQS = Request.QueryString["search"].ToString();
 
-                    for (var i = 0; i < top5recc.Count; i++)
+            } catch
+            {
+                searchQS = null;
+            }
+
+            if (searchQS == null)
+            {
+                headerText.Text = "Showing: Shop";
+                //System.Diagnostics.Debug.WriteLine("SEARCH IS NULL");
+                // if user didnt search anything, itll check if user is logged in
+                // if user is logged in and has data saved for him, he will have his recc lessons shown else itll be random
+                if (Session["id"] != null)
+                {
+                    try
                     {
-                        System.Diagnostics.Debug.WriteLine(top5recc[i].ToString());
-                        l1 = l1.GetLessonById(top5recc[i].ToString());
-                        lesson.Add(new Lesson()
+                        //Find the top 5 using machine learning
+                        MLContext mlContext = new MLContext();
+                        (IDataView trainingDataView, IDataView testDataView) = LoadData(mlContext);
+                        ITransformer model = BuildAndTrainModel(mlContext, trainingDataView);
+                        EvaluateModel(mlContext, testDataView, model);
+                        //UseModelForSinglePrediction(mlContext, model);
+                        var top5recc = UseModelForBest5Prediction(mlContext, model);
+                        SaveModel(mlContext, trainingDataView.Schema, model);
+
+                        for (var i = 0; i < top5recc.Count; i++)
                         {
-                            title = l1.title,
-                            price = l1.price,
-                            rating = l1.rating,
-                            difficulty = l1.difficulty,
-                            duration = l1.duration
-                        });
+                            System.Diagnostics.Debug.WriteLine(top5recc[i].ToString());
+                            l1 = l1.GetLessonById(top5recc[i].ToString());
+                            lesson.Add(new Lesson()
+                            {
+                                title = l1.title,
+                                price = l1.price,
+                                rating = l1.rating,
+                                difficulty = l1.difficulty,
+                                duration = l1.duration
+                            });
+                        }
                     }
-                } catch
+                    catch
+                    {
+                        List<int> lessonId = new List<int>();
+                        l1 = new Lesson();
+                        for (var j = 0; j < 5; j++)
+                        {
+                            //System.Diagnostics.Debug.WriteLine("Starting While Loop");
+                            while (true)
+                            {
+                                int rando = RandomNumber(1, l1.GetLengthOfDB());
+                                l1 = l1.GetLessonById(rando.ToString());
+
+                                //System.Diagnostics.Debug.WriteLine("Random Number " + rando);
+
+                                if (lessonId.Contains(rando) == false)
+                                {
+                                    //System.Diagnostics.Debug.WriteLine("Lesson contain" + lesson.Contains(l1));
+                                    lesson.Add(new Lesson()
+                                    {
+                                        title = l1.title,
+                                        price = l1.price,
+                                        rating = l1.rating,
+                                        difficulty = l1.difficulty,
+                                        duration = l1.duration
+                                    });
+                                    lessonId.Add(rando);
+
+                                    break;
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+                else
                 {
                     List<int> lessonId = new List<int>();
                     l1 = new Lesson();
                     for (var j = 0; j < 5; j++)
                     {
-                        System.Diagnostics.Debug.WriteLine("Starting While Loop");
+                        //System.Diagnostics.Debug.WriteLine("Starting While Loop");
                         while (true)
                         {
                             int rando = RandomNumber(1, l1.GetLengthOfDB());
@@ -78,49 +130,45 @@ namespace EADProj
                         }
 
                     }
-                }
 
-            } else
+                }
+            }
+            else
             {
-                List<int> lessonId = new List<int>();
-                l1 = new Lesson();
-                for (var j = 0; j < 5; j++)
+                var query = searchQS;
+                //System.Diagnostics.Debug.WriteLine("SEARCH IS NOT NULL");
+                //System.Diagnostics.Debug.WriteLine(Session["search"]);
+                headerText.Text = "Showing: " + query;
+                Search.Search searchRet = new Search.Search();
+                Lesson tempLesson = new Lesson();
+                List<Lesson> lList = new List<Lesson>();
+
+                lList = tempLesson.RetrieveAllLessons();
+
+                for (var i = 0; i < lList.Count; i++)
                 {
-                    System.Diagnostics.Debug.WriteLine("Starting While Loop");
-                    while (true)
-                    {
-                        int rando = RandomNumber(1, l1.GetLengthOfDB());
-                        l1 = l1.GetLessonById(rando.ToString());
-
-                        System.Diagnostics.Debug.WriteLine("Random Number " + rando);
-
-                        if (lessonId.Contains(rando) == false)
-                        {
-                            System.Diagnostics.Debug.WriteLine("Lesson contain" + lesson.Contains(l1));
-                            lesson.Add(new Lesson()
-                            {
-                                title = l1.title,
-                                price = l1.price,
-                                rating = l1.rating,
-                                difficulty = l1.difficulty,
-                                duration = l1.duration
-                            });
-                            lessonId.Add(rando);
-
-                            break;
-                        }
-                    }
+                    System.Diagnostics.Debug.WriteLine("=========" + lList[i].id + "========");
 
                 }
+
+                lesson = searchRet.searchQuery(lList, query);
+
+                if (lesson.Count == 0)
+                {
+                    notFoundLbl.Visible = true;
+                }
+
+
 
             }
 
+            
 
-        
         }
 
         protected (IDataView training, IDataView test) LoadData(MLContext mlContext)
         {
+            // gets the test and train data
             var trainingDataPath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "APP_Data", "recommendationTrain.csv");
             var testDataPath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "APP_Data", "recommendationTest.csv");
 
@@ -167,8 +215,10 @@ namespace EADProj
         {
             var top5List = new List<int> { 0, 0, 0, 0, 0 };
             var top5ListScore = new List<int> { 0, 0, 0, 0, 0 };
+            var numberofLessons = new Lesson();
+
             var predictionEngine = mlContext.Model.CreatePredictionEngine<LessonRating, LessonRatingPrediction>(model);
-            for (var i = 0; i < 193609; i++)
+            for (var i = 0; i < numberofLessons.GetLengthOfDB(); i++)
             {
                 var testInput = new LessonRating { userId = Convert.ToInt64(Session["id"]), lessonId = i };
                 var lessonRatingPrediction = predictionEngine.Predict(testInput);

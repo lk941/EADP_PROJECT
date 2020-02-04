@@ -53,5 +53,46 @@ namespace EADProj.DLL
             int rec_cnt = ds.Tables[0].Rows.Count;
             return rec_cnt;
         }
+
+        public List<Lesson> RetrieveAllLessons()
+        {
+            List<Lesson> lessonList = new List<Lesson>();
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            string sqlStmt = "Select * from Lesson";
+            SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            
+
+            if (rec_cnt == 0)
+            {
+                return null;
+            }
+            else
+            {
+               
+                for (var i = 0; i < rec_cnt; i++)
+                {
+                    Lesson l1 = new Lesson();
+                    DataRow row = ds.Tables[0].Rows[i];
+                    l1.id = row["id"].ToString();
+                    l1.title = row["title"].ToString();
+                    l1.price = row["price"].ToString();
+                    l1.rating = row["rating"].ToString();
+                    l1.difficulty = row["difficulty"].ToString();
+                    l1.duration = row["duration"].ToString();
+                    l1.overview = row["overview"].ToString();
+                    lessonList.Add(l1);
+
+                    //System.Diagnostics.Debug.WriteLine("=========" + l1.id+ "========");
+
+                }
+
+                return lessonList;
+            }
+        }
     }
 }

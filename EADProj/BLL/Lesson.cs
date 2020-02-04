@@ -15,6 +15,7 @@ namespace EADProj.BLL
         public string rating { get; set; }
         public string difficulty { get; set; }
         public string duration { get; set; }
+        public string overview { get; set; }
 
         public Lesson()
         {
@@ -50,6 +51,12 @@ namespace EADProj.BLL
         {
             LessonDAO dao = new LessonDAO();
             return dao.GetLengthOfDB();
+        }
+
+        public List<Lesson> RetrieveAllLessons()
+        {
+            LessonDAO dao = new LessonDAO();
+            return dao.RetrieveAllLessons();
         }
     }
 }

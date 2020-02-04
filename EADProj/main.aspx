@@ -15,8 +15,8 @@
       </h3>
       <div class="wrap">
        <div class="search">
-          <input type="text" class="searchTerm" placeholder="What are you looking for?">
-          <button type="submit" class="searchButton">
+          <input type="text" id="searchInput" class="searchTerm" placeholder="What are you looking for?">
+          <button type="submit" class="searchButton" onclick="searchQuery()">
             <i class="fa fa-search"></i>
          </button>
        </div>
@@ -168,7 +168,7 @@
     <section class="content-section bg-primary text-white text-center" id="services">
         <div class="content-section-heading">
             <h3 class="text-secondary mb-0">Courses</h3>
-            <h2 style="color: #212121;" class="mb-5">Recommended for you</h2>
+            <h2 style="color: #212121;" class="mb-5">Check these out</h2>
         </div>
         <div class="course-wrapper">
             <div class="container">
@@ -288,4 +288,36 @@
             <a class="btn btn-primary btn-xl" style="background-color: #ffa31a !important; border-color: #ffa31a !important; color: #212121 !important;" href="/courseRecc.aspx">Start here!</a>
         </div>
     </section>
+
+    <script>
+    function searchQuery() {
+        var search = document.getElementById("searchInput").value;
+        var obj = { search: search };
+        var param = JSON.stringify(obj);
+
+         $.ajax({  
+             type: "POST",  
+             url: "main.aspx/queryFind",  
+             contentType: "application/json; charset=utf-8",  
+             dataType: "json",
+             data: param,
+             success: function (response) {  
+                 var ret = response.d; 
+                 
+                 if (ret == "empty") {
+                     alert("Type Something"); 
+                 } else if (ret == "error") {
+                     alert("Something went wrong, please try again later"); 
+                 } else {
+                     window.location = "http://localhost:5000/productGrid.aspx?search=" + search;
+                 }
+                 
+             },  
+             error: function (response, textStatus, error) {  
+                 alert("The error is: " + response.d + " " + error);  
+             }  
+         });  
+    }
+    </script>
 </asp:Content>
+

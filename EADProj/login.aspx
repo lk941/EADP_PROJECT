@@ -26,6 +26,7 @@
                 <div class='agree'>
                     <asp:Button type="submit" class='animated btn btn-lg btn-primary btn-block' style="background-color:#ffa31a;" ID="loginBtn" runat="server" Text="Login" OnClick="loginBtn_Click" />
                     <label style="display: block;margin-top: 1em;margin-left: 6.5em;"><a href="localhost:5000/register.aspx">Don't have an account?</a></label>
+                    <!--
                     <a href="/user/facebook" class="sc-buttons github-button" style="background-color:#4267b2;">
                         <i class="fab fa-facebook-f"></i>
                         Facebook
@@ -35,12 +36,10 @@
                         <i class="fab fa-twitter"></i>
                         Twitter
                     </a>
+                    -->
 
                     <div class="g-signin2" data-onsuccess="onSignIn" style="width:auto;"></div>
 		
-                    <asp:Button ID="GoogleBtn" runat="server" Text="Google" >
-                        
-                    </asp:Button>
                     <!--
                         <i class="fab fa-google"></i>
                         Google
@@ -78,7 +77,7 @@
              data: param,
              success: function (response) {  
                  var ret = response.d; 
-                 alert(ret);  
+                 //alert(ret);  
                  window.location.href = "http://localhost:5000/main.aspx";
              },  
              error: function (response) {  

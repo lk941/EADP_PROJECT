@@ -10,7 +10,7 @@
 <div style="margin: 0; padding: 0; max-width: 100%; width: 100%;" class="container jumbo-container">
   <div class="jumbotron jumbo-header">
     <h3>
-      This is a header.
+        <asp:Label ID="headerText" runat="server"></asp:Label>
     </h3>
   </div>
 </div>
@@ -51,31 +51,208 @@
                         <div class="panel-body">
                           <div class="row">
                             <div class="col-xs-6 col-lg-2">
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">JavaScript</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">Python</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">C#</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">C++</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">Java</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">Swift</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">Kotlin</label></div>
+                                <div class="button-group">
+                                    <button
+                                        type="button"
+                                        class="btn btn-default btn-sm dropdown-toggle"
+                                        data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-cog"> <span style="font-family:Arial;">Development</span></span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" id="devTopics">
+                                        <li>
+                                        <a href="#" class="small" data-value="option1" tabindex="-1"
+                                            ><input type="checkbox" value="JavaScript"/>&nbsp;JavaScript</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option2" tabindex="-1"
+                                            ><input type="checkbox" value="Python"/>&nbsp;Python</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option3" tabindex="-1"
+                                            ><input type="checkbox" value="C#"/>&nbsp;C#</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option4" tabindex="-1"
+                                            ><input type="checkbox" value="C++" />&nbsp;C++</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option5" tabindex="-1"
+                                            ><input type="checkbox" value="Java"/>&nbsp;Java</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option6" tabindex="-1"
+                                            ><input type="checkbox" value="Swift"/>&nbsp;Swift</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option7" tabindex="-1"
+                                            ><input type="checkbox" value="Kotlin"/>&nbsp;Kotlin</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option8" tabindex="-1"
+                                            ><input type="checkbox" value="MySQL"/>&nbsp;MySQL</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option9" tabindex="-1"
+                                            ><input type="checkbox" value="NoSQL"/>&nbsp;NoSQL</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option10" tabindex="-1"
+                                            ><input type="checkbox" value="ORACLE" />&nbsp;ORACLE</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option11" tabindex="-1"
+                                            ><input type="checkbox" value="HTML" />&nbsp;HTML</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option12" tabindex="-1"
+                                            ><input type="checkbox" value="CSS"/>&nbsp;CSS</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option13" tabindex="-1"
+                                            ><input type="checkbox" value="XML"/>&nbsp;XML</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option14" tabindex="-1"
+                                            ><input type="checkbox" value="PHP"/>&nbsp;PHP</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option15" tabindex="-1"
+                                            ><input type="checkbox" value="Bootstrap"/>&nbsp;Bootstrap</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option16" tabindex="-1"
+                                            ><input type="checkbox" value="Node.js" />&nbsp;Node.js</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option17" tabindex="-1"
+                                            ><input type="checkbox" value="Vue.js"/>&nbsp;Vue.js</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option18" tabindex="-1"
+                                            ><input type="checkbox" value="Angular"/>&nbsp;Angular</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option19" tabindex="-1"
+                                            ><input type="checkbox" value="React"/>&nbsp;React</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="col-xs-6 col-lg-2">
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">MySQL</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">NoSQL</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">ORACLE</label></div>
+                                <div class="button-group">
+                                    <button
+                                        type="button"
+                                        class="btn btn-default btn-sm dropdown-toggle"
+                                        data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-cog"> <span style="font-family:Arial;">Business</span></span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" id="businessTopics">
+                                        <li>
+                                        <a href="#" class="small" data-value="option1" tabindex="-1"
+                                            ><input type="checkbox" value="JavaScript"/>&nbsp;Accounting</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option1" tabindex="-1"
+                                            ><input type="checkbox" value="Financing"/>&nbsp;Financing</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option3" tabindex="-1"
+                                            ><input type="checkbox" value="Forex"/>&nbsp;Forex</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option4" tabindex="-1"
+                                            ><input type="checkbox" value="Investing" />&nbsp;Investing</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option5" tabindex="-1"
+                                            ><input type="checkbox" value="Excel"/>&nbsp;Excel</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option6" tabindex="-1"
+                                            ><input type="checkbox" value="Stock Trading"/>&nbsp;Stock Trading</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option7" tabindex="-1"
+                                            ><input type="checkbox" value="Technical Analysis"/>&nbsp;Technical Analysis</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="col-xs-6 col-lg-2">
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">HTML</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">CSS</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">XML</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">PHP</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">Bootstrap</label></div>
+                              <div class="button-group">
+                                    <button
+                                        type="button"
+                                        class="btn btn-default btn-sm dropdown-toggle"
+                                        data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-cog"> <span style="font-family:Arial;">IT & Software</span></span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" id="itTopics">
+                                        <li>
+                                        <a href="#" class="small" data-value="option1" tabindex="-1"
+                                            ><input type="checkbox" value="AWS"/>&nbsp;AWS Certification</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option1" tabindex="-1"
+                                            ><input type="checkbox" value="Cisco"/>&nbsp;Cisco CCNA</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option3" tabindex="-1"
+                                            ><input type="checkbox" value="Cyber Security"/>&nbsp;Cyber Security</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option4" tabindex="-1"
+                                            ><input type="checkbox" value="Ethical Hacking" />&nbsp;Ethical Hacking</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option5" tabindex="-1"
+                                            ><input type="checkbox" value="Linux"/>&nbsp;Linux</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option6" tabindex="-1"
+                                            ><input type="checkbox" value="AI"/>&nbsp;AI/ML</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="col-xs-6 col-lg-2">
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">Node.js</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">Vue.js</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">Angular</label></div>
-                              <div class="checkbox"><label><input type="checkbox" name="career_state[]" value="">React</label></div>
+                              <div class="button-group">
+                                    <button
+                                        type="button"
+                                        class="btn btn-default btn-sm dropdown-toggle"
+                                        data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-cog"> <span style="font-family:Arial;">Art & Design</span></span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" id="artTopics">
+                                        <li>
+                                        <a href="#" class="small" data-value="option1" tabindex="-1"
+                                            ><input type="checkbox" value="AWS"/>&nbsp;AWS Certification</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option1" tabindex="-1"
+                                            ><input type="checkbox" value="Cisco"/>&nbsp;Cisco CCNA</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option3" tabindex="-1"
+                                            ><input type="checkbox" value="Cyber Security"/>&nbsp;Cyber Security</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option4" tabindex="-1"
+                                            ><input type="checkbox" value="Ethical Hacking" />&nbsp;Ethical Hacking</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option5" tabindex="-1"
+                                            ><input type="checkbox" value="Linux"/>&nbsp;Linux</a>
+                                        </li>
+                                        <li>
+                                        <a href="#" class="small" data-value="option6" tabindex="-1"
+                                            ><input type="checkbox" value="AI"/>&nbsp;AI/ML</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                           </div>
                         </div>
@@ -293,6 +470,8 @@
   <div class="course-wrapper">
     <div class="container" style="border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
       <h3 style="padding-top: 3vh; padding-bottom: 3vh; text-align: center;">All Courses</h3>
+       <asp:Label style="text-align: center; display: block; font-size: x-large; color: red; padding-bottom: 1%;" ID="notFoundLbl"  runat="server" Text="Not found" Visible="False"></asp:Label>
+
       <div class="row">
 
           <% foreach(var x in lesson) { %>
@@ -300,7 +479,7 @@
               <div class="col-6 col-sm-6 col-md-4 col-lg-3">
                   <a class="course-anchor" href="#">
                     <div class="course-card">
-                      <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
+                      <img class="course-card__image" src="https://pics.me.me/how-to-disappoint-your-parents-starter-pack-funnyism-come-1007325.png" />
                       <div class="course-card__inner">
                         <span class="u-d--block course-card__instructor">Ralph Smith</span>
                         <h3 class="course-card__title"><%= x.title %></h3>
@@ -328,4 +507,28 @@
   </div>
 </div>
 <!-- /.primary -->
+    <script>
+        var options = [];
+
+        $( '.dropdown-menu a' ).on( 'click', function( event ) {
+
+           var $target = $( event.currentTarget ),
+               val = $target.attr( 'data-value' ),
+               $inp = $target.find( 'input' ),
+               idx;
+
+           if ( ( idx = options.indexOf( val ) ) > -1 ) {
+              options.splice( idx, 1 );
+              setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+           } else {
+              options.push( val );
+              setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
+           }
+
+           $( event.target ).blur();
+      
+           console.log( options );
+           return false;
+        });
+    </script>
 </asp:Content>

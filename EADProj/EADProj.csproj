@@ -295,6 +295,7 @@
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Search\Search.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="menu.Master" />

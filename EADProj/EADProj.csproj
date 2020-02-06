@@ -218,6 +218,7 @@
     <Content Include="emailVerify.aspx" />
     <Content Include="img\bg-callout.jpg" />
     <Content Include="img\bg-masthead.jpg" />
+    <Content Include="img\children.png" />
     <Content Include="img\drugs.png" />
     <Content Include="img\javascript.png" />
     <Content Include="img\likeyLogo.png" />

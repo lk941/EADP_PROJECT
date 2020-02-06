@@ -34,131 +34,154 @@
         <div class="container cat-container">
             <div class="row">
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <div class="custom-card">
-                        <div class="small-image-thumbnail">
-                            <i style="width: 100%; height: 100%;" class="fas fa-code"></i>
-                        </div>
-                        <div class="small-text-container">
-                            <span class="small-category-title">Development
-                            </span>
-                            <div class="custom-create-button">
-                                <span class="create-text">GO
+                    <a href="productGrid.aspx?cate=Development">
+                        <div class="custom-card">
+                            <div class="small-image-thumbnail">
+                                <i style="width: 100%; height: 100%;" class="fas fa-code"></i>
+                            </div>
+                            <div class="small-text-container">
+                                <span class="small-category-title">Development
                                 </span>
+                                <div class="custom-create-button">
+                                    <span class="create-text">GO
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <div class="custom-card">
-                        <div class="small-image-thumbnail">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <div class="small-text-container">
-                            <span class="small-category-title">Business
-                            </span>
-                            <div class="custom-create-button">
-                                <span class="create-text">GO
+                    <a href="/productGrid.aspx?cate=Business">
+
+                        <div class="custom-card">
+                            <div class="small-image-thumbnail">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="small-text-container">
+                                <span class="small-category-title">Business
                                 </span>
+                                <div class="custom-create-button">
+                                    <span class="create-text">GO
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                    </a>
                 </div>
 
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <div class="custom-card">
-                        <div class="small-image-thumbnail">
-                            <i class="fas fa-tv"></i>
-                        </div>
-                        <div class="small-text-container">
-                            <span class="small-category-title">Technology
-                            </span>
-                            <div class="custom-create-button">
-                                <span class="create-text">GO
+                    <a href="/productGrid.aspx?cate=Technology">
+
+                        <div class="custom-card">
+                            <div class="small-image-thumbnail">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                            <div class="small-text-container">
+                                <span class="small-category-title">Technology
                                 </span>
+                                <div class="custom-create-button">
+                                    <span class="create-text">GO
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <div class="custom-card">
-                        <div class="small-image-thumbnail">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <div class="small-text-container">
-                            <span class="small-category-title">Art & Design
-                            </span>
-                            <div class="custom-create-button">
-                                <span class="create-text">GO
+                    <a href="/productGrid.aspx?cate=Art%AND%Design">
+                        <div class="custom-card">
+                            <div class="small-image-thumbnail">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="small-text-container">
+                                <span class="small-category-title">Art & Design
                                 </span>
+                                <div class="custom-create-button">
+                                    <span class="create-text">GO
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <div class="custom-card">
-                        <div class="small-image-thumbnail">
-                            <i class="fas fa-comment-dollar"></i>
-                        </div>
-                        <div class="small-text-container">
-                            <span class="small-category-title">Marketing
-                            </span>
-                            <div class="custom-create-button">
-                                <span class="create-text">GO
+                    <a href="/productGrid.aspx?cate=Marketing">
+
+                        <div class="custom-card">
+                            <div class="small-image-thumbnail">
+                                <i class="fas fa-comment-dollar"></i>
+                            </div>
+                            <div class="small-text-container">
+                                <span class="small-category-title">Marketing
                                 </span>
+                                <div class="custom-create-button">
+                                    <span class="create-text">GO
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        </a>
                 </div>
 
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <div class="custom-card">
-                        <div class="small-image-thumbnail">
-                            <i class="fas fa-user-friends"></i>
-                        </div>
-                        <div class="small-text-container">
-                            <span class="small-category-title">Personal Dev.
-                            </span>
-                            <div class="custom-create-button">
-                                <span class="create-text">GO
+                    <a href="/productGrid.aspx?cate=Health%AND%Fitness">
+
+                        <div class="custom-card">
+                            <div class="small-image-thumbnail">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div class="small-text-container">
+                                <span class="small-category-title">Health & Fitness
                                 </span>
+                                <div class="custom-create-button">
+                                    <span class="create-text">GO
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        </a>
                 </div>
 
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <div class="custom-card">
-                        <div class="small-image-thumbnail">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                        <div class="small-text-container">
-                            <span class="small-category-title">Photography
-                            </span>
-                            <div class="custom-create-button">
-                                <span class="create-text">GO
+                    <a href="/productGrid.aspx?cate=Photography">
+
+                        <div class="custom-card">
+                            <div class="small-image-thumbnail">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <div class="small-text-container">
+                                <span class="small-category-title">Photography
                                 </span>
+                                <div class="custom-create-button">
+                                    <span class="create-text">GO
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        </a>
                 </div>
 
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <div class="custom-card">
-                        <div class="small-image-thumbnail">
-                            <i class="fas fa-music"></i>
-                        </div>
-                        <div class="small-text-container">
-                            <span class="small-category-title">Music
-                            </span>
-                            <div class="custom-create-button">
-                                <span class="create-text">GO
+                    <a href="/productGrid.aspx?cate=Music">
+
+                        <div class="custom-card">
+                            <div class="small-image-thumbnail">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="small-text-container">
+                                <span class="small-category-title">Music
                                 </span>
+                                <div class="custom-create-button">
+                                    <span class="create-text">GO
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        </a>
                 </div>
             </div>
         </div>
@@ -173,107 +196,39 @@
         <div class="course-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                        <a class="course-anchor" href="#">
+                  <% foreach(var x in lesson) { %>
+                      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                          <a class="course-anchor" href="#">
                             <div class="course-card">
-                                <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
-                                <div class="course-card__inner">
-                                    <span class="u-d--block course-card__instructor">Ralph Smith</span>
-                                    <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
-                                    <div class="star-rating">
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="far fa-star"></span>
-                                        <span class="far fa-star"></span>
-                                    </div>
-                                    <div class="course-card__meta-wrapper">
-                                        <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
-                                        <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
-                                    </div>
-                                    <div class="product-price">
-                                        $200.00
-                                    </div>
+                              <img class="course-card__image" src="<%= x.image_url %>"" />
+                              <div class="course-card__inner">
+                                <span class="u-d--block course-card__instructor">Ralph Smith</span>
+                                <h3 class="course-card__title"><%= x.title %></h3>
+
+                                <div class="star-rating">
+                                    <!--
+                                  <span class="fas fa-star"></span>
+                                  <span class="fas fa-star"></span>
+                                  <span class="fas fa-star-half"></span>
+                                  <span class="far fa-star"></span>
+                                  <span class="far fa-star"></span>
+                                    -->
+                                    <span class="stars" data-rating="<%=x.rating_1.ToString() %>"" data-num-stars="5" ></span>
+
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                        <a class="course-anchor" href="#">
-                            <div class="course-card">
-                                <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
-                                <div class="course-card__inner">
-                                    <span class="u-d--block course-card__instructor">Ralph Smith</span>
-                                    <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
-                                    <div class="star-rating">
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="far fa-star"></span>
-                                        <span class="far fa-star"></span>
-                                    </div>
-                                    <div class="course-card__meta-wrapper">
-                                        <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
-                                        <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
-                                    </div>
-                                    <div class="product-price">
-                                        $200.00
-                                    </div>
+                                <div class="course-card__meta-wrapper">
+                                  <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i><%= x.difficulty %></span>
+                                  <span class="u-d--inline-block course-card__time"><%= x.duration %></span>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                        <a class="course-anchor" href="#">
-                            <div class="course-card">
-                                <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
-                                <div class="course-card__inner">
-                                    <span class="u-d--block course-card__instructor">Ralph Smith</span>
-                                    <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
-                                    <div class="star-rating">
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="far fa-star"></span>
-                                        <span class="far fa-star"></span>
-                                    </div>
-                                    <div class="course-card__meta-wrapper">
-                                        <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
-                                        <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
-                                    </div>
-                                    <div class="product-price">
-                                        $200.00
-                                    </div>
+                                <div class="product-price">
+                                  $<%= x.price %>
                                 </div>
+                              </div>
                             </div>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3">
-                        <a class="course-anchor" href="#">
-                            <div class="course-card">
-                                <img class="course-card__image" src="https://www.edureka.co/blog/wp-content/uploads/2016/11/aws-cloud-computing-02.png" />
-                                <div class="course-card__inner">
-                                    <span class="u-d--block course-card__instructor">Ralph Smith</span>
-                                    <h3 class="course-card__title">Deploying Maraki Cloud Access Points</h3>
-                                    <div class="star-rating">
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="fas fa-star"></span>
-                                        <span class="far fa-star"></span>
-                                        <span class="far fa-star"></span>
-                                    </div>
-                                    <div class="course-card__meta-wrapper">
-                                        <span class="u-d--inline-block course-card__difficulty"><i class="fas fa-igloo"></i>Beginner</span>
-                                        <span class="u-d--inline-block course-card__time"><i class="fas fa-film"></i>2h 20m</span>
-                                    </div>
-                                    <div class="product-price">
-                                        $200.00
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                          </a>
+                     </div>
+                  <% } %>
+              </div>
             </div>
         </div>
     </section>
@@ -288,6 +243,7 @@
             <a class="btn btn-primary btn-xl" style="background-color: #ffa31a !important; border-color: #ffa31a !important; color: #212121 !important;" href="/courseRecc.aspx">Start here!</a>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
     <script>
     function searchQuery() {
@@ -317,7 +273,24 @@
                  alert("The error is: " + response.d + " " + error);  
              }  
          });  
-    }
+        }
+
+        $.fn.stars = function() {
+          return $(this).each(function() {
+            const rating = $(this).data("rating");
+            const numStars = $(this).data("numStars");
+            const fullStar = '<i class="fas fa-star checked"></i>'.repeat(Math.floor(rating));
+            const halfStar =
+              rating % 1 !== 0 ? '<i class="fas fa-star-half-alt"></i>' : "";
+            const noStar = '<i class="far fa-star"></i>'.repeat(
+              Math.floor(numStars - rating)
+            );
+            $(this).html(`${fullStar}${halfStar}${noStar}`);
+          });
+        };
+
+        $(".stars").stars();
+
     </script>
 </asp:Content>
 

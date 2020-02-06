@@ -8,6 +8,9 @@ using Microsoft.ML.Trainers;
 using System.IO;
 using System.Reflection;
 using EADProj.Search;
+using System.Web.Services;
+using System.Web.Script.Services;
+using System.Linq;
 
 namespace EADProj
 {
@@ -21,6 +24,12 @@ namespace EADProj
             lesson = new List<Lesson>();
             Lesson l1 = new Lesson();
             var searchQS = "";
+            var filterQS = "";
+            var lvlQS = "";
+            var priceQS = "";
+            var ratingQS = "";
+            var categoryQS = "";
+
             try
             {
                 searchQS = Request.QueryString["search"].ToString();
@@ -28,6 +37,32 @@ namespace EADProj
             } catch
             {
                 searchQS = null;
+            }
+
+            try
+            {
+                filterQS = Request.QueryString["filter"].ToString();
+                lvlQS = Request.QueryString["lvlFilter"].ToString();
+                priceQS = Request.QueryString["priceFilter"].ToString();
+                ratingQS = Request.QueryString["ratingFilter"].ToString();
+                //System.Diagnostics.Debug.WriteLine(categoryQS);
+
+            }
+            catch
+            {
+                filterQS = null;
+                lvlQS = null;
+                priceQS = null;
+                ratingQS = null;
+            }
+
+            try
+            {
+                categoryQS = Request.QueryString["cate"].ToString();
+                System.Diagnostics.Debug.WriteLine(categoryQS);
+            } catch
+            {
+                categoryQS = null;
             }
 
             if (searchQS == null)
@@ -53,13 +88,16 @@ namespace EADProj
                         {
                             System.Diagnostics.Debug.WriteLine(top5recc[i].ToString());
                             l1 = l1.GetLessonById(top5recc[i].ToString());
+                            var lesson_rating = (double.Parse(l1.rating_1) * 1 + double.Parse(l1.rating_2) * 2 + double.Parse(l1.rating_3) * 3 + double.Parse(l1.rating_4) * 4 + double.Parse(l1.rating_5) * 5) / (double.Parse(l1.rating_1) + double.Parse(l1.rating_2) + double.Parse(l1.rating_3) + double.Parse(l1.rating_4) + double.Parse(l1.rating_5));
+
                             lesson.Add(new Lesson()
                             {
                                 title = l1.title,
                                 price = l1.price,
-                                rating = l1.rating,
+                                image_url = l1.image_url,
                                 difficulty = l1.difficulty,
-                                duration = l1.duration
+                                duration = l1.duration,
+                                rating_1 = lesson_rating.ToString(),
                             });
                         }
                     }
@@ -67,13 +105,14 @@ namespace EADProj
                     {
                         List<int> lessonId = new List<int>();
                         l1 = new Lesson();
-                        for (var j = 0; j < 5; j++)
+                        for (var j = 0; j < 8; j++)
                         {
                             //System.Diagnostics.Debug.WriteLine("Starting While Loop");
                             while (true)
                             {
                                 int rando = RandomNumber(1, l1.GetLengthOfDB());
                                 l1 = l1.GetLessonById(rando.ToString());
+                                var lesson_rating = (double.Parse(l1.rating_1) * 1 + double.Parse(l1.rating_2) * 2 + double.Parse(l1.rating_3) * 3 + double.Parse(l1.rating_4) * 4 + double.Parse(l1.rating_5) * 5) / (double.Parse(l1.rating_1) + double.Parse(l1.rating_2) + double.Parse(l1.rating_3) + double.Parse(l1.rating_4) + double.Parse(l1.rating_5));
 
                                 //System.Diagnostics.Debug.WriteLine("Random Number " + rando);
 
@@ -84,9 +123,10 @@ namespace EADProj
                                     {
                                         title = l1.title,
                                         price = l1.price,
-                                        rating = l1.rating,
+                                        image_url = l1.image_url,
                                         difficulty = l1.difficulty,
-                                        duration = l1.duration
+                                        duration = l1.duration,
+                                        rating_1 = lesson_rating.ToString(),
                                     });
                                     lessonId.Add(rando);
 
@@ -97,12 +137,55 @@ namespace EADProj
                         }
                     }
 
+                } else if (filterQS != null || lvlQS != null || priceQS != null || ratingQS != null)
+                {
+                    List<String> fQS = filterQS.Split(',').ToList();
+                    List<String> levelQS = lvlQS.Split(',').ToList();
+                    List<String> pQS = priceQS.Split(',').ToList();
+                    List<String> rQS = ratingQS.Split(',').ToList();
+
+                    List<String> rfQS = new List<String>();
+
+                    for (var i = 0; i < fQS.Count; i++)
+                    {
+                        rfQS.Add(fQS[i].Replace("%", " "));
+                    }
+
+                    Search.Search filterRet = new Search.Search();
+                    Lesson tempLesson = new Lesson();
+                    List<Lesson> lList = new List<Lesson>();
+                    lList = tempLesson.RetrieveAllLessons();
+
+                    for (var i = 0; i < lList.Count; i++)
+                    {
+                        System.Diagnostics.Debug.WriteLine("========= " + lList[i].id + " ========");
+
+                    }
+
+                    lesson = filterRet.filterQuery(lList, rfQS, levelQS, pQS, rQS);
+
+                } else if (categoryQS != null) 
+                {
+                    Search.Search categoryRet = new Search.Search();
+                    Lesson tempLesson = new Lesson();
+                    List<Lesson> lList = new List<Lesson>();
+                    lList = tempLesson.RetrieveAllLessons();
+                    System.Diagnostics.Debug.WriteLine("========= CATEGORY: " + categoryQS + " ========");
+
+                    categoryQS = categoryQS.Replace("%", " ");
+                    categoryQS = categoryQS.Replace("AND", "&");
+
+                    headerText.Text = categoryQS;
+
+                    lesson = categoryRet.retCategories(lList, categoryQS);
+
+
                 }
                 else
                 {
                     List<int> lessonId = new List<int>();
                     l1 = new Lesson();
-                    for (var j = 0; j < 5; j++)
+                    for (var j = 0; j < 8; j++)
                     {
                         //System.Diagnostics.Debug.WriteLine("Starting While Loop");
                         while (true)
@@ -115,13 +198,16 @@ namespace EADProj
                             if (lessonId.Contains(rando) == false)
                             {
                                 System.Diagnostics.Debug.WriteLine("Lesson contain" + lesson.Contains(l1));
+                                var lesson_rating = (double.Parse(l1.rating_1) * 1 + double.Parse(l1.rating_2) * 2 + double.Parse(l1.rating_3) * 3 + double.Parse(l1.rating_4) * 4 + double.Parse(l1.rating_5) * 5) / (double.Parse(l1.rating_1) + double.Parse(l1.rating_2) + double.Parse(l1.rating_3) + double.Parse(l1.rating_4) + double.Parse(l1.rating_5));
+
                                 lesson.Add(new Lesson()
                                 {
                                     title = l1.title,
                                     price = l1.price,
-                                    rating = l1.rating,
+                                    image_url = l1.image_url,
                                     difficulty = l1.difficulty,
-                                    duration = l1.duration
+                                    duration = l1.duration,
+                                    rating_1 = lesson_rating.ToString(),
                                 });
                                 lessonId.Add(rando);
 
@@ -161,8 +247,25 @@ namespace EADProj
 
 
             }
+        }
 
-            
+        [WebMethod]
+        [ScriptMethod]
+        public static string queryFilter(List<String> filter, List<String> lvlFilter, List<String> priceFilter, List<String> ratingFilter)
+        {
+            //System.Diagnostics.Debug.WriteLine(search);
+            var fFilter = new List<String>();
+
+            for (var i =0; i < filter.Count; i++)
+            {
+                System.Diagnostics.Debug.WriteLine(filter[i].Replace(" ", "%"));
+                var fFilterItem = filter[i].Replace(" ", "%");
+                fFilter.Add(fFilterItem);
+                
+            }
+            System.Diagnostics.Debug.WriteLine("productGrid.aspx?filter=" + String.Join(",", fFilter) + "&lvlFilter=" + String.Join(",", lvlFilter) + "&priceFilter=" + String.Join(",", priceFilter) + "&ratingFilter=" + String.Join(",", ratingFilter));
+
+            return "productGrid.aspx?filter=" + String.Join(",", fFilter) + "&lvlFilter=" + String.Join(",", lvlFilter) + "&priceFilter=" + String.Join(",", priceFilter) + "&ratingFilter=" + String.Join(",", ratingFilter);
 
         }
 
@@ -213,8 +316,8 @@ namespace EADProj
 
         protected List<int> UseModelForBest5Prediction(MLContext mlContext, ITransformer model)
         {
-            var top5List = new List<int> { 0, 0, 0, 0, 0 };
-            var top5ListScore = new List<int> { 0, 0, 0, 0, 0 };
+            var top5List = new List<int> { 0, 0, 0, 0, 0, 0};
+            var top5ListScore = new List<int> { 0, 0, 0, 0, 0, 0};
             var numberofLessons = new Lesson();
 
             var predictionEngine = mlContext.Model.CreatePredictionEngine<LessonRating, LessonRatingPrediction>(model);
@@ -234,7 +337,7 @@ namespace EADProj
             System.Diagnostics.Debug.WriteLine("HERE ARE THE TOP 5");
 
 
-            for (var j = 0; j < 5; j++)
+            for (var j = 0; j < 6; j++)
             {
                 System.Diagnostics.Debug.WriteLine(top5List[j] + " " + Environment.NewLine);
             }

@@ -15,6 +15,109 @@ namespace EADProj.Search
 
         }
 
+        
+        public IList<Lesson> filterQuery(IList<Lesson> lessons, List<String> filter, List<String> lvlFilter, List<String> priceFilter, List<String> ratingFilter)
+        {
+            List<Lesson> ILessonList = new List<Lesson>();
+
+
+            for (var i = 0; i < lessons.Count(); i++)
+            {
+                for (var j = 0; j < filter.Count(); j++)
+                {
+                    if (lessons[i].topic.ToLower() == filter[j].ToLower())
+                    {
+                        System.Diagnostics.Debug.WriteLine("Matched for topic lesson topic is: " + lessons[i].topic.ToLower());
+                        if (ILessonList.Contains(lessons[i]) != true)
+                        {
+                            ILessonList.Add(lessons[i]);
+                            break;
+                        }
+                    }
+                }
+
+                for (var j = 0; j < lvlFilter.Count(); j++)
+                {
+                    if (lessons[i].difficulty.ToLower() == lvlFilter[j].ToLower())
+                    {
+                        System.Diagnostics.Debug.WriteLine("Matched for lesson level is: " + lessons[i].difficulty.ToLower());
+                        if (ILessonList.Contains(lessons[i]) != true)
+                        {
+                            ILessonList.Add(lessons[i]);
+                            break;
+                        }
+                    }
+                }
+
+                for (var j = 0; j < priceFilter.Count(); j++)
+                {
+                    System.Diagnostics.Debug.WriteLine("Price filter " + priceFilter[j].ToLower());
+
+                    if ((Double.Parse(lessons[i].price) > 0) && (priceFilter[j].ToLower() == "paid"))
+                    {
+                        System.Diagnostics.Debug.WriteLine("Matched for paid lesson");
+                        if (ILessonList.Contains(lessons[i]) != true)
+                        {
+                            ILessonList.Add(lessons[i]);
+                            break;
+                        }
+                    } else if ((Double.Parse(lessons[i].price) == 0) && (priceFilter[j].ToLower() == "free"))
+                    {
+                        System.Diagnostics.Debug.WriteLine("Matched for free lesson");
+                        if (ILessonList.Contains(lessons[i]) != true)
+                        {
+                            ILessonList.Add(lessons[i]);
+                            break;
+                        }
+                    }
+                }
+
+                for (var j = 0; j < ratingFilter.Count(); j++)
+                {
+                    Double value;
+                    if (Double.TryParse(ratingFilter[j], out value))
+                    {
+                        Double meanRating = (double.Parse(lessons[i].rating_1) * 1 + double.Parse(lessons[i].rating_2) * 2 + double.Parse(lessons[i].rating_3) * 3 + double.Parse(lessons[i].rating_4) * 4 + double.Parse(lessons[i].rating_5) * 5) / (double.Parse(lessons[i].rating_1) + double.Parse(lessons[i].rating_2) + double.Parse(lessons[i].rating_3) + double.Parse(lessons[i].rating_4) + double.Parse(lessons[i].rating_5));
+                        System.Diagnostics.Debug.WriteLine((double.Parse(lessons[i].rating_1) * 1 + double.Parse(lessons[i].rating_2) * 2 + double.Parse(lessons[i].rating_3) * 3 + double.Parse(lessons[i].rating_4) * 4 + double.Parse(lessons[i].rating_5) * 5) + "/" + (double.Parse(lessons[i].rating_1) + double.Parse(lessons[i].rating_2) + double.Parse(lessons[i].rating_3) + double.Parse(lessons[i].rating_4) + double.Parse(lessons[i].rating_5)));
+                        System.Diagnostics.Debug.WriteLine("Mean Rating: " + meanRating);
+                        if (meanRating >= Double.Parse(ratingFilter[j]))
+                        {
+                            System.Diagnostics.Debug.WriteLine("Matched for rating lesson");
+                            if (ILessonList.Contains(lessons[i]) != true)
+                            {
+                                ILessonList.Add(lessons[i]);
+                                break;
+                            }
+                        }
+                    }
+
+                }
+
+
+            }
+
+
+            return ILessonList;
+
+        }
+
+        public IList<Lesson> retCategories(IList<Lesson> lessons, string cat)
+        {
+            List<Lesson> sLessons = new List<Lesson>();
+
+            for (var i = 0; i < lessons.Count; i++)
+            {
+                if(lessons[i].category.ToLower() == cat.ToLower())
+                {
+                    sLessons.Add(lessons[i]);
+                }
+                    
+            }
+            return sLessons;
+
+        }
+
+
         public IList<Lesson> searchQuery(IList<Lesson> lessons, string query)
         {
             if (query == null)
@@ -33,7 +136,7 @@ namespace EADProj.Search
         }
         
 
-            // Filter out the lessons that are irrelevent by checking if the lesson title contains the query
+        // Filter out the lessons that are irrelevent by checking if the lesson title contains the query
         private IList<Lesson> retLessonContain(IList<Lesson> lessons, string query)
         {
             List<Lesson> containsWordLessons = new List<Lesson>();
@@ -45,8 +148,8 @@ namespace EADProj.Search
             for (var i = 0; i < lessons.Count; i++)
             {
                 // Check if any of the query words are in the lesson title
-                var lesson_title = lessons[i].title;
-                var lesson_overview = lessons[i].overview;
+                var lesson_title = lessons[i].title.ToLower();
+                var lesson_overview = lessons[i].overview.ToLower();
 
                 System.Diagnostics.Debug.WriteLine("=========" + "WE AT INDEX " + i + "========");
 
@@ -54,12 +157,12 @@ namespace EADProj.Search
 
                 for (var j = 0; j < querySplit.Count(); j++)
                 {
-                    if(lesson_title.Contains(querySplit[j]))
+                    if(lesson_title.Contains(querySplit[j].ToLower()))
                     {
                         containsWordLessons.Add(lessons[i]);
                         System.Diagnostics.Debug.WriteLine("=========ADDING INDEX " + i + "========");
                         break;
-                    } else if(lesson_overview.Contains(querySplit[j]))
+                    } else if(lesson_overview.Contains(querySplit[j].ToLower()))
                     {
                         containsWordLessons.Add(lessons[i]);
                         System.Diagnostics.Debug.WriteLine("=========ADDING INDEX " + i + "========");
@@ -86,22 +189,23 @@ namespace EADProj.Search
 
                 System.Diagnostics.Debug.WriteLine("WE AT INDEX " + i);
 
-                var lesson_title = lessons[i].title;
-                var lesson_overview = lessons[i].overview;
-                var lesson_rating = Double.Parse(lessons[i].rating);
+                var lesson_title = lessons[i].title.ToLower();
+                var lesson_overview = lessons[i].overview.ToLower();
+                var lesson_rating = (double.Parse(lessons[i].rating_1) * 1 + double.Parse(lessons[i].rating_2) * 2 + double.Parse(lessons[i].rating_3) * 3 + double.Parse(lessons[i].rating_4) * 4 + double.Parse(lessons[i].rating_5) * 5) / (double.Parse(lessons[i].rating_1) + double.Parse(lessons[i].rating_2) + double.Parse(lessons[i].rating_3) + double.Parse(lessons[i].rating_4) + double.Parse(lessons[i].rating_5));
+
                 System.Diagnostics.Debug.WriteLine("=========TITLE: " + lesson_title + "========");
 
 
                 Double points = 0;
                 for (var j = 0; j < querySplit.Count(); j++)
                 {
-                    if (lesson_title.Contains(querySplit[j]))
+                    if (lesson_title.Contains(querySplit[j].ToLower()))
                     {
                         points += 1.5;
                     }
 
 
-                    var match = Regex.Matches(lesson_overview, querySplit[j]).Count;
+                    var match = Regex.Matches(lesson_overview, querySplit[j].ToLower()).Count;
 
                     if (match > 6)
                     {

@@ -325,64 +325,64 @@ body {
     cursor: pointer;
 }
 
-    .new-category-card .image-thumbnail,
-    .new-category-card .text-container {
-        transition: 0.3s;
-    }
+.new-category-card .image-thumbnail,
+.new-category-card .text-container {
+    transition: 0.3s;
+}
 
-    .new-category-card:hover {
-        padding: 4px;
-        width: 216px;
-        height: 103px;
-    }
+.new-category-card:hover {
+    padding: 4px;
+    width: 216px;
+    height: 103px;
+}
 
-        .new-category-card:hover .category-title {
-            transform: translateY(-22px);
-        }
+.new-category-card:hover .category-title {
+    transform: translateY(-22px);
+}
 
-        .new-category-card:hover .create-button {
-            opacity: 1;
-        }
+.new-category-card:hover .create-button {
+    opacity: 1;
+}
 
-        .new-category-card:hover .coming-soon-button {
-            opacity: 1;
-        }
+.new-category-card:hover .coming-soon-button {
+    opacity: 1;
+}
 
-        .new-category-card:hover .image-thumbnail,
-        .new-category-card:hover .text-container {
-            transform: scale(0.9);
-        }
+.new-category-card:hover .image-thumbnail,
+.new-category-card:hover .text-container {
+    transform: scale(0.9);
+}
 
 .custom-card {
     transition: 0.3s;
     cursor: pointer;
 }
 
-    .custom-card .image-thumbnail,
-    .custom-card .text-container {
-        transition: 0.3s;
-    }
+.custom-card .image-thumbnail,
+.custom-card .text-container {
+    transition: 0.3s;
+}
 
-    .custom-card:hover {
-        width: 234px;
-    }
+.custom-card:hover {
+    width: 234px;
+}
 
-        .custom-card:hover .category-title {
-            transform: translateY(-22px);
-        }
+.custom-card:hover .category-title {
+    transform: translateY(-22px);
+}
 
-        .custom-card:hover .custom-create-button {
-            opacity: 1;
-        }
+.custom-card:hover .custom-create-button {
+    opacity: 1;
+}
 
-        .custom-card:hover .coming-soon-button {
-            opacity: 1;
-        }
+.custom-card:hover .coming-soon-button {
+    opacity: 1;
+}
 
-        .custom-card:hover .image-thumbnail,
-        .custom-card:hover .text-container {
-            transform: scale(0.9);
-        }
+.custom-card:hover .image-thumbnail,
+.custom-card:hover .text-container {
+    transform: scale(0.9);
+}
 
 .small-image-thumbnail i {
     color: #212121;

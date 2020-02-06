@@ -218,8 +218,11 @@
     <Content Include="emailVerify.aspx" />
     <Content Include="img\bg-callout.jpg" />
     <Content Include="img\bg-masthead.jpg" />
+    <Content Include="img\drugs.png" />
+    <Content Include="img\javascript.png" />
     <Content Include="img\likeyLogo.png" />
     <Content Include="img\mglass.png" />
+    <Content Include="img\disappointment.png" />
     <Content Include="img\portfolio-1.jpg" />
     <Content Include="img\portfolio-2.jpg" />
     <Content Include="img\portfolio-3.jpg" />

@@ -15,6 +15,7 @@ namespace EADProj.BLL
         public bool emailVerified { get; set; }
         public string hash { get; set; }
         public string imageURL { get; set; }
+        public string role { get; set; }
 
         public User()
         {

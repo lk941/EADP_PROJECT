@@ -34,9 +34,19 @@ namespace EADProj.DLL
                 l1.id = row["id"].ToString();
                 l1.title = row["title"].ToString();
                 l1.price = row["price"].ToString();
-                l1.rating = row["rating"].ToString();
+                l1.image_url = row["image_url"].ToString();
                 l1.difficulty = row["difficulty"].ToString();
                 l1.duration = row["duration"].ToString();
+                l1.overview = row["overview"].ToString();
+                l1.category = row["category"].ToString();
+                l1.topic = row["topic"].ToString();
+                l1.rating_1 = row["rating_1"].ToString();
+                l1.rating_2 = row["rating_2"].ToString();
+                l1.rating_3 = row["rating_3"].ToString();
+                l1.rating_4 = row["rating_4"].ToString();
+                l1.rating_5 = row["rating_5"].ToString();
+
+
                 return l1;
             }
         }
@@ -81,10 +91,17 @@ namespace EADProj.DLL
                     l1.id = row["id"].ToString();
                     l1.title = row["title"].ToString();
                     l1.price = row["price"].ToString();
-                    l1.rating = row["rating"].ToString();
+                    l1.image_url = row["image_url"].ToString();
                     l1.difficulty = row["difficulty"].ToString();
                     l1.duration = row["duration"].ToString();
                     l1.overview = row["overview"].ToString();
+                    l1.category = row["category"].ToString();
+                    l1.topic = row["topic"].ToString();
+                    l1.rating_1 = row["rating_1"].ToString();
+                    l1.rating_2 = row["rating_2"].ToString();
+                    l1.rating_3 = row["rating_3"].ToString();
+                    l1.rating_4 = row["rating_4"].ToString();
+                    l1.rating_5 = row["rating_5"].ToString();
                     lessonList.Add(l1);
 
                     //System.Diagnostics.Debug.WriteLine("=========" + l1.id+ "========");

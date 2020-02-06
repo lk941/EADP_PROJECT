@@ -496,7 +496,7 @@ h3.course-card__title {
 
 .course-card__difficulty,
 .course-card__time {
-    margin-right: 20px;
+    margin-right: 10px;
     color: #4a4a4a;
     font-family: "Open Sans";
     font-size: 14px;
@@ -504,11 +504,11 @@ h3.course-card__title {
     line-height: 19px;
 }
 
-    .course-card__difficulty i,
-    .course-card__time i {
-        margin-right: 7px;
-        font-size: 18px;
-    }
+.course-card__difficulty i,
+.course-card__time i {
+    margin-right: 7px;
+    font-size: 18px;
+}
 
 .product-price {
     padding: 7px 0;

@@ -16,10 +16,23 @@ namespace EADProj.BLL
         public string hash { get; set; }
         public string imageURL { get; set; }
         public string role { get; set; }
+        public string rank { get; set; }
 
         public User()
         {
 
+        }
+        public User(string Id, string Name, string Password, string Email, bool emailVerified, string hash, string imageURL, string role, string rank)
+        {
+            this.id = Id;
+            this.name = Name;
+            this.password = Password;
+            this.email = Email;
+            this.emailVerified = emailVerified;
+            this.hash = hash;
+            this.imageURL = imageURL;
+            this.role = role;
+            this.rank = rank;
         }
 
         public User(string Id, string Name, string Password, string Email, bool emailVerified, string hash)
@@ -137,6 +150,12 @@ namespace EADProj.BLL
         {
             UserDAO dao = new UserDAO();
             return dao.checkOauthUser(email);
+        }
+
+        public List<User> Get4RandomTeachers()
+        {
+            UserDAO dao = new UserDAO();
+            return dao.Get4RandomTeachers();
         }
 
     }

@@ -625,8 +625,13 @@
 
     <!-- Featured Users -->
     <div class="row" style="border-top: 1px solid #eee;">
+    <% if (user.Count > 0)
+        { %>
       <h3 style="display:block; width: 100%; padding-top: 3vh; padding-bottom: 3vh; text-align: center;">Featured Tutors</h3>
+    <% }%>
+
       <div class="cards">
+          <!--
         <div class="col-sm-12 col-lg-3">
           <div class="card">
             <img src="https://cdn140.picsart.com/302202574114211.png?r1024x1024" alt="">
@@ -637,7 +642,7 @@
         </div>
         <div class="col-sm-12 col-lg-3">
           <div class="card">
-            <img src="https://i.pinimg.com/originals/bf/85/da/bf85daf12641323bc231a526c71c7a57.png " alt="">
+            <img src="https://cdn140.picsart.com/302202574114211.png?r1024x1024 " alt="">
             <h4>Elizabeth J. Vetter</h4>
             <small>Software Engineer</small>
             <button>See More</button>
@@ -659,6 +664,18 @@
             <button>See More</button>
           </div>
         </div>
+          -->
+          <% foreach(var i in user) { %>
+              <div class="col-sm-12 col-lg-3">
+                  <div class="card">
+                    <img src="<%=i.imageURL %>"" alt="">
+                    <h4><%=i.name %></h4>
+                    <small><%=i.rank %></small>
+                    <button>See More</button>
+                  </div>
+                </div>
+          <% } %>
+
       </div>
 
     </div>

@@ -231,6 +231,47 @@ namespace EADProj.DLL
             }
         }
 
+        public List<User> Get4RandomTeachers()
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            string sqlStmt = "Select * from [User] where role = 'Teacher'";
+            SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            var lUser = new List<User>();
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt > 0)
+            {
+                for (var i = 0; i < rec_cnt; i++)
+                {
+                    DataRow row = ds.Tables[0].Rows[i];
+                    User u1 = new User(row["id"].ToString(), row["name"].ToString(), "", "", Convert.ToBoolean(row["emailVerified"].ToString()), "", row["imageURL"].ToString(), row["role"].ToString(), row["rank"].ToString());
+                    lUser.Add(u1);
+                }
+
+                if (lUser.Count <= 4)
+                {
+                    return lUser;
+                } else
+                {
+                    var newlUser = new List<User>();
+                    for (var j = 0; j < 4; j++)
+                    {
+                        int rando = RandomNumber(1, lUser.Count);
+                        newlUser.Add(lUser[rando]);
+                        lUser.RemoveAt(rando);
+                    }
+                    return newlUser;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public void VerifyUser(string email)
         {
 

@@ -17,18 +17,24 @@ namespace EADProj
     public partial class productGrid : System.Web.UI.Page
     {
         protected IList<Lesson> lesson;
+        protected IList<User> user;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
 
             lesson = new List<Lesson>();
             Lesson l1 = new Lesson();
+            user = new List<User>();
+            User u1 = new User();
             var searchQS = "";
             var filterQS = "";
             var lvlQS = "";
             var priceQS = "";
             var ratingQS = "";
             var categoryQS = "";
+
+            user = u1.Get4RandomTeachers();
 
             try
             {

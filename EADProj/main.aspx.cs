@@ -14,7 +14,6 @@ namespace EADProj
     {
         protected IList<Lesson> lesson;
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             List<int> lessonId = new List<int>();
@@ -69,14 +68,30 @@ namespace EADProj
             {
                 //HttpContext.Current.Session["search"] = search;
                 return "not empty";
-           
+
             } else if (search.Length == 0)
             {
                 return "empty";
-            
-            } else
+
+            }else
             {
                 return "error";
+            }
+
+        }
+
+        [WebMethod]
+        [ScriptMethod]
+        public static string reccFn()
+        {
+            //System.Diagnostics.Debug.WriteLine(search);
+            if (HttpContext.Current.Session["id"] == null)
+            {
+                return "login";
+            }
+            else
+            {
+                return "true";
             }
 
         }

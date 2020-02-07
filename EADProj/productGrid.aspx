@@ -476,7 +476,7 @@
                                         </li>
                                         <li>
                                         <a href="#" class="small" data-value="option6" tabindex="-1"
-                                            ><input type="checkbox" name="personalDevTopicsInputs" value="Speed Reading"/>&nbsp;Speed Readinge</a>
+                                            ><input type="checkbox" name="personalDevTopicsInputs" value="Speed Reading"/>&nbsp;Speed Reading</a>
                                         </li>
                                         <li>
                                         <a href="#" class="small" data-value="option6" tabindex="-1"

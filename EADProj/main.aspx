@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <a href="/productGrid.aspx?cate=Art%AND%Design">
+                    <a href="/productGrid.aspx?cate=Art%AND%20Design">
                         <div class="custom-card">
                             <div class="small-image-thumbnail">
                                 <i class="fas fa-palette"></i>
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="col-4 col-sm-4 col-md-4 col-lg-3">
-                    <a href="/productGrid.aspx?cate=Health%AND%Fitness">
+                    <a href="/productGrid.aspx?cate=Health%AND%20Fitness">
 
                         <div class="custom-card">
                             <div class="small-image-thumbnail">
@@ -187,7 +187,7 @@
         </div>
     </section>
 
-    <!-- Services -->
+    <!-- Front page lessons -->
     <section class="content-section bg-primary text-white text-center" id="services">
         <div class="content-section-heading">
             <h3 class="text-secondary mb-0">Courses</h3>
@@ -240,7 +240,7 @@
         <em>perfect</em>
                 courses for you</h2>
             <p>Answer some questions related to what you want to learn!</p>
-            <a class="btn btn-primary btn-xl" style="background-color: #ffa31a !important; border-color: #ffa31a !important; color: #212121 !important;" href="/courseRecc.aspx">Start here!</a>
+            <button class="btn btn-primary btn-xl" style="background-color: #ffa31a !important; border-color: #ffa31a !important; color: #212121 !important;" onclick="reccFn()">Start here!</button>
         </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
@@ -273,6 +273,32 @@
                  alert("The error is: " + response.d + " " + error);  
              }  
          });  
+        }
+
+        function reccFn() {
+            var obj = { };
+            var param = JSON.stringify(obj);
+
+             $.ajax({  
+                 type: "POST",  
+                 url: "main.aspx/reccFn",  
+                 contentType: "application/json; charset=utf-8",  
+                 dataType: "json",
+                 data: param,
+                 success: function (response) {  
+                     var ret = response.d; 
+                 
+                    if (ret == "login") {
+                        window.location = "http://localhost:5000/login.aspx?login=False";
+                    } else {
+                        window.location = "http://localhost:5000/courseRecc.aspx";
+                    }
+                 
+                 },  
+                 error: function (response, textStatus, error) {  
+                     alert("The error is: " + response.d + " " + error);  
+                 }  
+             });  
         }
 
         $.fn.stars = function() {

@@ -15,7 +15,76 @@ namespace EADProj.Search
 
         }
 
-        
+        public IList<Lesson> reccQuery(IList<Lesson> lessons, string topic, string difficulty)
+        {
+            List<Lesson> ILessonList = new List<Lesson>();
+            System.Diagnostics.Debug.WriteLine(lessons.Count());
+
+            for (var i = 0; i < lessons.Count(); i++)
+            {
+                System.Diagnostics.Debug.WriteLine("Lesson Topic " + lessons[i].topic.ToLower());
+                System.Diagnostics.Debug.WriteLine("Topic " + topic.ToLower());
+
+                if (lessons[i].topic.ToLower() == topic.ToLower())
+                {
+                    System.Diagnostics.Debug.WriteLine("Matched for topic lesson topic is: " + lessons[i].topic.ToLower());
+                    if (ILessonList.Contains(lessons[i]) != true)
+                    {
+                        ILessonList.Add(lessons[i]);
+                    }
+                }
+            }
+
+            for (var i = 0; i < ILessonList.Count(); i++)
+            {
+
+                if (ILessonList[i].difficulty.ToLower() != difficulty.ToLower())
+                {
+                    ILessonList.RemoveAt(i);
+                }
+            }
+
+            var lCount = ILessonList.Count();
+            System.Diagnostics.Debug.WriteLine(lCount);
+
+            if (lCount <= 8)
+            {
+                return ILessonList;
+            } else
+            {
+                for (var i = 0; i < ILessonList.Count(); i++)
+                {
+                    Double meanRating = (double.Parse(ILessonList[i].rating_1) * 1 + double.Parse(ILessonList[i].rating_2) * 2 + double.Parse(ILessonList[i].rating_3) * 3 + double.Parse(ILessonList[i].rating_4) * 4 + double.Parse(ILessonList[i].rating_5) * 5) / (double.Parse(ILessonList[i].rating_1) + double.Parse(ILessonList[i].rating_2) + double.Parse(ILessonList[i].rating_3) + double.Parse(ILessonList[i].rating_4) + double.Parse(ILessonList[i].rating_5));
+                    if (meanRating < 4)
+                    {
+                        ILessonList.RemoveAt(i);
+                    }
+                }
+
+                if (ILessonList.Count() <= 8)
+                {
+                    return ILessonList;
+                } else
+                {
+                    var l1 = new Lesson();
+                    List<int> lessonId = new List<int>();
+                    var lesson = new List<Lesson>();
+
+                    for (var j = 0; j < 8; j++)
+                    {
+                        //System.Diagnostics.Debug.WriteLine("Starting While Loop");
+                        int rando = RandomNumber(1, ILessonList.Count());
+                        lesson.Add(ILessonList[rando]);
+                        ILessonList.RemoveAt(rando);
+
+                    }
+
+                    return lesson;
+                }
+
+            }
+        }
+
         public IList<Lesson> filterQuery(IList<Lesson> lessons, List<String> filter, List<String> lvlFilter, List<String> priceFilter, List<String> ratingFilter)
         {
             List<Lesson> ILessonList = new List<Lesson>();
@@ -96,7 +165,6 @@ namespace EADProj.Search
 
             }
 
-
             return ILessonList;
 
         }
@@ -114,7 +182,6 @@ namespace EADProj.Search
                     
             }
             return sLessons;
-
         }
 
 
@@ -277,9 +344,11 @@ namespace EADProj.Search
             return lessonList;
         }
 
-
-
-
+        public int RandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
 
     }
 }

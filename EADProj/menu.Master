@@ -168,8 +168,179 @@
            width: 100% !important;
        }
 
+       .footer__webservice a{
+    -webkit-transition: color 0.3s ease-in-out;
+    -o-transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
+    text-decroation: none;
+}
+ .footer__webservice a:hover{
+    color: #ff6600 !important;
+}
+.footer__webservice{
+  background: #080810;
+  height:200px;
+}
+.footer-links {
+    overflow: hidden;
+
+}
+.wrap{
+  max-width: 1280px;
+  /*margin: 0 auto;*/
+}
+
+/* footer navigation menu */
+.list-link-footer{    
+  padding: 33px 0;
+/*   border-top: 1px solid rgba(132,132,136,0.1);
+  border-bottom: 1px solid rgba(132,132,136,0.1); */
+  margin: 0 auto;
+/*   font-size: 0; */
+  text-align: center;
+}
+
+@media (max-width: 767px){
+  .list-link-footer{
+    padding: 0;
+    margin: 0 auto;
+    border: none;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+
+.list-link-footer li{
+   display: inline-block;
+   vertical-align: bottom;
+}
+
+@media (max-width: 767px){
+  .list-link-footer li{
+     display: block;
+     vertical-align: bottom;
+  }
+}
 
 
+@media (min-width: 767px) and (max-width: 1199px){
+  .list-link-footer li+li {
+      padding-left: 25px;
+  }
+}
+@media (min-width: 1200px){
+.list-link-footer li+li {
+    padding-left: 70px;
+  }}
+
+.list-link-footer li a {
+    height: 33px;
+    line-height: 4;
+    letter-spacing: 2px;
+    color: #fff;
+    font-size: 11px;
+    font-family: "montserrat";
+    font-weight: 900;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    vertical-align: bottom;
+    text-decoration: none;
+}
+@media (max-width: 767px){
+.list-link-footer li a {
+    height: auto;
+    line-height: 1;
+    padding: 0 10px 10px 10px;
+}}
+
+.list-footer-follow{
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(132,132,136,0.1);
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+@media (max-width: 767px){
+  .list-footer-follow{
+    padding: 18px 0;
+    border-top: 1px solid rgba(132,132,136,0.1);
+}
+}
+
+@media (max-width: 767px){
+  .list-footer-follow{
+    padding: 18px 0;
+    border-top: 1px solid rgba(132,132,136,0.1);
+}
+}
+
+.list-footer-follow li{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.list-footer-follow li+li {
+    margin-left: 39px;
+}
+@media (max-width: 767px){
+.list-footer-follow li+li {
+    margin-left: 25px;
+  }
+}
+
+
+.list-footer-follow  li a {
+    line-height: 14px;
+    height: 14px;
+    font-size: 9px;
+    font-weight: bold;
+    color: #848488;
+    font-family: "montserrat";
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.list-footer-follow li a span.icon-social-footer{
+  font-size: 12px;
+}
+
+@media (max-width: 767px){
+  .list-footer-follow li a span.icon-social-footer{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px){
+  .list-footer-follow li a .name-reseau {
+      display: none;
+  }
+}
+
+@media (max-width: 766px) {
+    .footer-copyright {
+        color: #55555a;
+        font-size: 11px;
+        -webkit-display: -webkit-box;
+        -webkit-display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-copyright {
+        display: block;
+        padding: 18px 0;
+    }
+}
+.footer-copyright {
+    text-align: center;
+}
     </style>
 </head>
 <body id="page-top" class="index">
@@ -204,11 +375,33 @@
     </div>
 </div>
 </asp:Panel>
-
-    
-
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
     </asp:ContentPlaceHolder>
+
+    <footer>
+      <div class="footer__webservice">
+        <div class="wrap clearfix">
+          <div class="footer-links">
+            <ul class="list-link-footer">
+              <li><a href="/productGrid.aspx">Shop</a></li>
+              <li><a href="/login.aspx">Login</a></li>
+              <li><a href="/register.aspx">Register</a></li>
+              <li><a href="/main.aspx">LIKEY</a></li>
+
+              <li><a href="/forum_home.aspx">FORUM</a></li>
+              <li><a href="#">[EMPTY]</a></li>
+              <li><a href="#">[EMPTY]</a></li>
+            </ul>
+          </div><!-- footer-links-->
+          <div class="footer-copyright">
+            <div class="left-block">
+              <p>© 2020, Likey. All rights reserved</p>
+            </div><!-- left-block-->
+          </div><!-- footer-copyright-->
+        </div><!-- wrap clearfix -->
+      </div><!-- footer__webservice-->
+
+    </footer>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>

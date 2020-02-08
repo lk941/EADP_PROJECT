@@ -237,6 +237,7 @@
     <Content Include="js\login-client.js" />
     <Content Include="login.aspx" />
     <Content Include="main.aspx" />
+    <Content Include="map.aspx" />
     <Content Include="productGrid.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config">
@@ -284,6 +285,13 @@
     </Compile>
     <Compile Include="main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="map.aspx.cs">
+      <DependentUpon>map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="map.aspx.designer.cs">
+      <DependentUpon>map.aspx</DependentUpon>
     </Compile>
     <Compile Include="menu.Master.cs">
       <DependentUpon>menu.Master</DependentUpon>

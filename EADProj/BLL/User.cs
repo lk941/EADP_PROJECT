@@ -17,11 +17,35 @@ namespace EADProj.BLL
         public string imageURL { get; set; }
         public string role { get; set; }
         public string rank { get; set; }
+        public string address { get; set; }
+        public string street { get; set; }
+        public string country { get; set; }
+        public string postalCode { get; set; }
+        public string unitNo { get; set; }
 
         public User()
         {
 
         }
+
+        public User(string Id, string Name, string Password, string Email, bool emailVerified, string hash, string imageURL, string role, string rank, string address, string street, string country, string postalCode, string unitNo)
+        {
+            this.id = Id;
+            this.name = Name;
+            this.password = Password;
+            this.email = Email;
+            this.emailVerified = emailVerified;
+            this.hash = hash;
+            this.imageURL = imageURL;
+            this.role = role;
+            this.rank = rank;
+            this.address = address;
+            this.street = street;
+            this.country = country;
+            this.postalCode = postalCode;
+            this.unitNo = unitNo;
+        }
+
         public User(string Id, string Name, string Password, string Email, bool emailVerified, string hash, string imageURL, string role, string rank)
         {
             this.id = Id;

@@ -275,6 +275,20 @@ namespace EADProj
 
         }
 
+        [WebMethod]
+        [ScriptMethod]
+        public static string trackTeacher(string id)
+        {
+            User u1 = new User();
+            if (u1.GetTeacherLocationById(id) == null)
+            {
+                return "unavail";
+            } else
+            {
+                return id;
+            }
+        }
+
         protected (IDataView training, IDataView test) LoadData(MLContext mlContext)
         {
             // gets the test and train data

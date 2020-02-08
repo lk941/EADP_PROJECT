@@ -5,6 +5,23 @@
     <style>
 	    body { margin: 0; padding: 0; }
 	    #map { top: 0; bottom: 0; width: 100%; }
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+
+        .mapboxgl-popup-content {
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .marker {
+            background-image: url('https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/map-marker-icon.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -12,8 +29,8 @@
         <div id='map' style='width: 100%; height: 100%;'></div>
 
     </div>
-
-
+<script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiY2Vld2FpIiwiYSI6ImNqbng3eDcyZDByeXgzcHBnY2w0cGloM2sifQ.NsvAT34SplBxuUvZsvUSKA';
         var map = new mapboxgl.Map({
@@ -27,8 +44,85 @@
             antialias: true
     });
 
-    // The 'building' layer in the mapbox-streets vector source contains building-height
+    <% if (user != null) { %>
+
+
+    var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+        mapboxClient.geocoding
+        .forwardGeocode({
+            query: '<%=user.country%> <%=user.address%>  <%=user.postalCode%>',
+            autocomplete: false,
+            limit: 1
+        })
+        .send()
+        .then(function(response) {
+        if (
+            response &&
+            response.body &&
+            response.body.features &&
+            response.body.features.length
+        ) {
+            var feature = response.body.features[0];
+            console.log(feature.center);
+
+            var geojson = {
+              type: 'FeatureCollection',
+              features: [{
+                type: 'Feature',
+                geometry: {
+                  type: 'Point',
+                  coordinates: feature.center
+                },
+                properties: {
+                  title: '<%= user.name%>',
+                  description: '<%= user.address%>',
+                }
+              },
+              /*{
+                type: 'Feature',
+                geometry: {
+                  type: 'Point',
+                  coordinates: [-122.414, 37.776]
+                },
+                properties: {
+                  title: 'Mapbox',
+                  description: 'San Francisco, California'
+                }
+              }*/
+              ]
+            };
+
+
+            geojson.features.forEach(function(marker) {
+
+                // create a HTML element for each feature
+                var el = document.createElement('div');
+                el.className = 'marker';
+                el.style.backgroundImage = '<%= user.imageURL%>';
+
+                // make a marker for each feature and add to the map
+                new mapboxgl.Marker(el)
+                .setLngLat(marker.geometry.coordinates)
+                .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+                .addTo(map);
+
+                map.flyTo({
+                    center: marker.geometry.coordinates,
+                    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                });
+
+            });
+            //new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+            }
+        <% } %>
+
+});
+
+
+// The 'building' layer in the mapbox-streets vector source contains building-height
 // data from OpenStreetMap.
+    
 map.on('load', function() {
     // Insert the layer beneath any symbol layer.
     var layers = map.getStyle().layers;
@@ -78,6 +172,7 @@ map.on('load', function() {
     labelLayerId
     );
 });
+
 </script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>

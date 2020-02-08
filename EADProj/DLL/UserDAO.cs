@@ -231,6 +231,30 @@ namespace EADProj.DLL
             }
         }
 
+        public User GetTeacherLocationById(string id)
+        {
+            //System.Diagnostics.Debug.WriteLine("THE ID OF THE TEACHER IS " + id);
+            string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+            SqlConnection myConn = new SqlConnection(DBConnect);
+            string sqlStmt = "Select * from [User] where id = @paraId";
+            SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
+            da.SelectCommand.Parameters.AddWithValue("@paraId", id);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            if (rec_cnt > 0)
+            {
+                DataRow row = ds.Tables[0].Rows[0];
+                User u1 = new User(row["id"].ToString(), row["name"].ToString(), "", row["email"].ToString(), true, "", row["imageURL"].ToString(), row["role"].ToString(), row["rank"].ToString(), row["address"].ToString(), row["street"].ToString(), row["country"].ToString(), row["postalCode"].ToString(), row["unitNo"].ToString());
+                return u1;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public List<User> Get4RandomTeachers()
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;

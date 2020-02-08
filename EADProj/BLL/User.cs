@@ -182,5 +182,10 @@ namespace EADProj.BLL
             return dao.Get4RandomTeachers();
         }
 
+        public User GetTeacherLocationById(string id)
+        {
+            UserDAO dao = new UserDAO();
+            return dao.GetTeacherLocationById(id);
+        }
     }
 }

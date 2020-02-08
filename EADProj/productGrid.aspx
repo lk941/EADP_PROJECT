@@ -671,7 +671,7 @@
                     <img src="<%=i.imageURL %>"" alt="">
                     <h4><%=i.name %></h4>
                     <small><%=i.rank %></small>
-                    <button>See More</button>
+                    <button onclick="trackTeacher(<%=i.id.ToString() %>)">Track</button>
                   </div>
                 </div>
           <% } %>
@@ -751,6 +751,34 @@
            return false;
         });
         */
+
+        function trackTeacher(id) {
+            //alert(id);
+            var obj = { id:id };
+            var param = JSON.stringify(obj);
+
+             $.ajax({  
+                 type: "POST",  
+                 url: "productGrid.aspx/trackTeacher",  
+                 contentType: "application/json; charset=utf-8",  
+                 dataType: "json",
+                 data: param,
+                 success: function (response) {  
+                     var ret = response.d; 
+                 
+                    if (ret == "unavail") {
+                        alert("User is unavailable.");
+                    } else {
+                        //alert("GOING TO TRACK USER");
+                        window.location = "http://localhost:5000/map.aspx?teacherID=" + response.d;
+                    }
+                 
+                 },  
+                 error: function (response, textStatus, error) {  
+                     alert("The error is: " + response.d + " " + error);  
+                 }  
+             });  
+        }
 
         function filterQuery() {
             var filter = [];

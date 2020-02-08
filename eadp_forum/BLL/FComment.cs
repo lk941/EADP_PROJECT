@@ -47,6 +47,12 @@ namespace eadp_forum.BLL
             return dao.DeleteComment(fcomment_id);
         }
 
+        public int UpdVotes(int fcomment_id, int votes)
+        {
+            FCommentDAO dao = new FCommentDAO();
+            return dao.UpdateVotes(fcomment_id, votes);
+        }
+
     }
 
 }

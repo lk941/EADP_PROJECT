@@ -1,5 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Likey.Master" AutoEventWireup="true" CodeBehind="forum_post.aspx.cs" Inherits="eadp_forum.forum_page" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Likey.Master" AutoEventWireup="true" CodeBehind="forum_post.aspx.cs" Inherits="eadp_forum.forum_page" EnableEventValidation="true" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .forum-post-page {
@@ -21,7 +22,7 @@
 }
 */
     .fcommentidno {
-        color: #F8B109;
+        color: #E48F01
     }
 
 .forum-post-subtitle {
@@ -38,7 +39,7 @@
     background-color: white;
     margin-top: 3vh;
     height: auto;
-    padding: 30px 0 15px 50px;
+    padding: 30px 45px 15px 50px;
     width: 47vw;
     border-radius: 10px;
     display: inline-block;
@@ -118,7 +119,7 @@
 }
 
 .link-button-comment {
-    margin-left: 30vw;
+    margin-left: 40vw;
 }
 .ForumTextbox {
     margin-bottom: 10px;
@@ -164,6 +165,30 @@
         width: 300px;
         height: 140px;
     }
+
+    .triangle-up {
+	width: 0;
+	height: 0;
+    display: inline-block;
+	border-left: 20px solid #E48F01;
+	border-right: 20px solid #E48F01;
+	border-bottom: 25px solid white;
+    border-top: 0px solid white;
+    margin-left: 20px;
+}
+
+    .triangle-up:hover {
+        border-top: 0px solid blue;
+    }
+
+    .triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 20px solid #E48F01;
+	border-right: 20px solid #E48F01;
+	border-top: 25px solid white;
+    margin-right: 35px;
+}
 
     </style>
 </asp:Content>
@@ -226,7 +251,7 @@
                <div>
                    <asp:Repeater ID="RepeaterAnswer" runat="server" OnItemCommand="RepeaterAnswer_ItemCommand">
                        <HeaderTemplate>
-                <table style="width: 100%; padding-left: 30px;">
+                <table style="width: 100%; padding-left: 20px;">
                     <tr>
                         <th>
                            
@@ -237,12 +262,12 @@
 
                 <tr>
                     
-                        <td>   
+                        <td>  
+                             
                         <div style="display: flex">
-                       <img style="height: 50px; width: 50px;" src="https://www.sackettwaconia.com/wp-content/uploads/default-profile.png" />
-                           <p style="margin-left: 10px; font-size: 150%"> 
-                               <asp:Label ID="LabelCommentID" runat="server" Text='<%# Eval("fcomment_id") %>' CssClass="fcommentidno"></asp:Label>
-                        <asp:Label ID="LabelAnswer" runat="server" Text='<%# Eval("comment") %>'></asp:Label> </p>
+                            <asp:Button ID="ButtonUpvoteComment" onclick="ButtonUpvoteComment_Click" runat="server" Text="" CssClass="triangle-up" /> 
+                            
+                           
                    </div>
                     </td>
                     <td>
@@ -255,18 +280,29 @@
                 <tr style="margin-bottom: 10px;">
                     <td>
                         <div class="forum-post-subinstance">
-                <p style="padding-left: 0"> 
-                    
-                    user: <asp:Label ID="LabelUser" runat="server" Text='<%# Eval("user_id") %>' CssClass="" /> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    upvotes: <asp:Label ID="LabelVotes" runat="server" Text='<%# Eval("votes") %>' CssClass="" /> &nbsp&nbsp&nbsp
-                    comments: 0 
+                            
+                            <div style="display: flex">
+                                <h2 style="display: inline-block; margin: 15px 25px 0px 35px;"> <asp:Label ID="LabelCommentVotes" runat="server" Text='<%# Eval("votes") %>'></asp:Label> </h2>
+                                <figure style="height: 50px; width: 50px; margin-left: 20px;">
+                                <img style="width: 100%" src="https://www.sackettwaconia.com/wp-content/uploads/default-profile.png" />
+                                <figcaption>user: <asp:Label ID="Label1" runat="server" Text='<%# Eval("user_id") %>' CssClass="" /></figcaption>
+
+                            </figure>
+                       
+                           <p style="margin-left: 10px; font-size: 150%"> 
+                               <asp:Label ID="LabelCommentID" runat="server" Text='<%# Eval("fcomment_id") %>' CssClass="fcommentidno"></asp:Label>
+                        <asp:Label ID="LabelAnswer" runat="server" Text='<%# Eval("comment") %>'></asp:Label> </p>
+                            </div>
+                <p style="padding-left: 0; margin-right: 50px; display: inline"> 
+                   
                     <asp:LinkButton ID="LinkButtonEditComment" runat="server" Font-Size="Small" CssClass="link-button-comment" onclick="LinkButtonDeleteComment_Click">Edit</asp:LinkButton>
                 <asp:LinkButton ID="LinkButtonDeleteComment" runat="server" Font-Size="Small">Delete</asp:LinkButton>
                 </p>
-                            <div style="margin-top: -10px; margin-bottom: -7px; width: 100%; display: flex">
-                <asp:LinkButton ID="LinkButtonVote" runat="server">Upvote</asp:LinkButton> &nbsp
+                            <div style="margin-top: -20px; margin-left: 20px; margin-bottom: -7px; width: 100%; display: flex">
+                                <asp:Button ID="ButtonDownvoteComment" runat="server" Text="Button" CssClass="triangle-down" />
+                <!-- <asp:LinkButton ID="LinkButtonVote" runat="server">Upvote</asp:LinkButton> &nbsp
                 <asp:LinkButton ID="LinkButtonShare" runat="server">Share</asp:LinkButton>&nbsp
-                <asp:LinkButton ID="LinkButtonMessage" runat="server">Message User</asp:LinkButton>
+                <asp:LinkButton ID="LinkButtonMessage" runat="server">Message User</asp:LinkButton> -->
             </div>
                            
             </div>
@@ -290,7 +326,7 @@
                    <asp:TextBox ID="TextBoxComment" width="80%" runat="server" Rows="10" placeholder="Have an answer? Leave it here!" TextMode="MultiLine"></asp:TextBox>
                    <asp:Button ID="ButtonSubmitComment" runat="server" Text="Submit" OnClick="ButtonSubmitComment_Click" />
                </div>
-               <h3 style="margin-top: 30px"> Not the answer you're looking for? Feel free to <asp:LinkButton ID="LinkButtonAskLink" runat="server">ask your own question</asp:LinkButton>!</h3>
+               <h3 style="margin-top: 30px"> Not the answer you're looking for? Feel free to <asp:LinkButton ID="LinkButtonAskLink" runat="server" OnClick="LinkButtonAskLink_Click">ask your own question</asp:LinkButton>!</h3>
 
             </div>
     </div>
@@ -304,29 +340,7 @@
 
             </asp:Repeater>
         </div>
-        <div>
-            <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
-            <cc1:Twitter ID="TwitterWindow" runat="server" ScreenName="Likey">
-                <EmptyDataTemplate>
-                    There are no matching tweets.
 
-                </EmptyDataTemplate>
-                <LayoutTemplate>
-                    <div runat="server" class="ajax__twitter_header"><asp:Image runat="server"
-        ImageUrl="mvwres://AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e/Twitter.Twitter32.png"></asp:Image>
-                        <h3 runat="server">Ajax Control Toolkit</h3>
-                        <h4 runat="server">ajaxcontroltoolkit</h4>
-
-                    </div>
-                    <ul runat="server" class="ajax__twitter_itemlist" style="margin:0px;"><asp:PlaceHolder runat="server" ID="ItemPlaceholder"></asp:PlaceHolder></ul>
-                    <div runat="server" class="ajax__twitter_footer"><asp:Image runat="server" ImageUrl="mvwres://AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral,
-PublicKeyToken=28f01b0e84b6d53e/Twitter.Twitter24.png"></asp:Image>
-
-                    </div>
-
-                </LayoutTemplate>
-            </cc1:Twitter>
-        </div>
     </div>
 
 </asp:Content>

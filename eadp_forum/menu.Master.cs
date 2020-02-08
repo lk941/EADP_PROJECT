@@ -11,6 +11,7 @@ namespace eadp_forum
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (Session["id"] != null)
             {
                 loginBtn.Visible = false;

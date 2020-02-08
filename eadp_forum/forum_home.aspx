@@ -119,7 +119,7 @@
     color: darkorange;
 }
 
-#forum-tags p:hover {
+#forum_tags p:hover {
     color: darkorange;
 }
 
@@ -129,7 +129,7 @@
     font-size: 0.6vw;
 }
 
-#forum-tags p {
+#forum_tags p {
     display: inline-block;
     margin: 3px; 
     padding: 1px 5px;
@@ -223,8 +223,8 @@
             </h3>
         <div class="popular-tags">
             <div class="forum-post-tags" style="font-size: 150%">
- <div id="forum-tags" style="font-size: 150%; border-color: white">
-                        <p> USERS </p> <p> CSS </p>
+ <div id="forum_tags" style="font-size: 150%; border-color: white" runat="server">
+                        
                     </div>
                 </div>
             

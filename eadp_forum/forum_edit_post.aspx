@@ -3,8 +3,8 @@
 
     <style>
         .forum-post-page {
-    margin: -77vh 0 0 25vw;
-    padding: -80vh 0 0 30vw;
+    margin: -105vh 0 0 25vw;
+    
     position: relative;
     display: inline-block;
 }
@@ -68,7 +68,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <div class="forum-post-page">
+        <div class="forum-post-page" style="margin-top: -130vh">
         <div class="forum-post-title">
             <h1> Ask a public question </h1>
         </div>

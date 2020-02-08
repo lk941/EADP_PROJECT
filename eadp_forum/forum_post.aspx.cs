@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.Services;
 using System.Data.Common;
+using eadp_forum.DLL;
+using eadp_forum.BLL;
 
 namespace eadp_forum
 {
@@ -18,8 +20,13 @@ namespace eadp_forum
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ForumPost thispost = new ForumPost();
+            // thispost.GetPostByID(Session["PostIDNo"].ToString()).post_description;
+
             LabelPostHeader.Text = Session["PostTitle"].ToString();
-            LabelPostDesc.Text = Session["PostDesc"].ToString();
+            // LabelPostDesc.Text = Session["PostDesc"].ToString();
+            LabelPostDesc.Text = thispost.GetPostByID(Session["PostIDNo"].ToString()).post_description.ToString();
+            Session["PostDesc"] = LabelPostDesc.Text.ToString();
             LabelPostUserID.Text = Session["PostUserID"].ToString();
             LabelViews.Text = Session["PostViews"].ToString();
 
@@ -81,7 +88,7 @@ namespace eadp_forum
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
             SqlConnection myConn = new SqlConnection(DBConnect);
-            string sqlStmt = "Select top 3 * from Fcomment order by votes desc";
+            string sqlStmt = "Select top 3 * from Fcomment where post_id = "+ Session["PostIDNo"].ToString() + " order by votes desc";
             SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
             // da.SelectCommand.Parameters.AddWithValue("@paraPostID", post_id);
             DataSet ds = new DataSet();
@@ -125,6 +132,23 @@ namespace eadp_forum
         protected void RepeaterAnswer_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             Label LabelCommentID = (Label)e.Item.FindControl("LabelCommentID");
+        }
+
+        protected void LinkButtonAskLink_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("forum_ask.aspx");
+        }
+
+        protected void ButtonUpvoteComment_Click(object sender, EventArgs e)
+        {
+            int updViews;
+            RepeaterItem item = (sender as Button).NamingContainer as RepeaterItem;
+
+            FComment fcomment = new FComment();
+            
+            updViews = fcomment.UpdVotes(Convert.ToInt16((item.FindControl("LabelCommentID") as Label).Text.ToString()), Convert.ToInt16((item.FindControl("LabelCommentVotes") as Label).Text.ToString() + 1));
+
+            Response.Redirect("forum_post.aspx");
         }
 
         //[WebMethod]

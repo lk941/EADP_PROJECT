@@ -58,7 +58,7 @@ namespace eadp_forum.DLL
 
             // Send Email Verification
             SendGridEmail email = new SendGridEmail();
-            string hrefLink = "https://localhost:44300/emailVerify.aspx?hash=" + randHash;
+            string hrefLink = "https://localhost:5000/emailVerify.aspx?hash=" + randHash;
             string content = $"<strong>Click <a href=\"{hrefLink}\">here</a> to get verified.</strong>";
             System.Diagnostics.Debug.WriteLine(content);
             email.sendEmail(user.email, user.name, content);

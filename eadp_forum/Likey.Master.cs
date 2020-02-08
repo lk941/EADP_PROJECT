@@ -11,7 +11,7 @@ namespace eadp_forum
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Session["id"] = "test";
+            Session["id"] = "test";
 
             if (Session["id"] != null)
             {
@@ -55,6 +55,11 @@ namespace eadp_forum
         protected void linkButtonAsk(object sender, EventArgs e)
         {
             Response.Redirect("forum_ask.aspx");
+        }
+
+        protected void ProfileIcon_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("session_user.aspx");
         }
     }
 }

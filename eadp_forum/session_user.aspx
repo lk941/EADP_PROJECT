@@ -55,6 +55,19 @@
         .profile-menu-container {
             padding-left: 15px;
         }
+
+        .edit-bio-textbox {
+            margin: 15px 0 10px 0; 
+            padding: 10px 0 10px 15px; 
+            height: 75px; 
+            width: 460px; 
+            align-content: center; 
+            background-color: #e3e3e3
+        }
+
+        .display-panels {
+            display: block;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -66,18 +79,43 @@
                 
         </div>
             <asp:ScriptManager ID="ScriptManagerUserProfile" runat="server"></asp:ScriptManager>
-                <ajaxToolkit:AjaxFileUpload ID="AjaxFileUploadProfilePic" runat="server" AllowedFileTypes=".jpg, .png" ClearFileListAfterUpload="False" MaximumNumberOfFiles="1" ToolTip="Upload Profile Pic here" />
+                <ajaxToolkit:AsyncFileUpload ID="AsyncFileUploadProfilePic" runat="server" />
 
             <div class="more_under_pic">
                 <h3> Credentials </h3>
                 <div style="line-height: 27px; font-size: 120%; margin-top: 10px">
-                    <asp:LinkButton ID="LinkButtonSchool" runat="server"><span class="glyphicon glyphicon-education"></span> Add your school </asp:LinkButton> <br />
-                <asp:LinkButton ID="LinkButtonWork" runat="server"><span class="glyphicon glyphicon-briefcase"></span> Add where you work </asp:LinkButton>
+                    <h5>Attended: </h5>
+                    <asp:Panel ID="PanelSchoolAttended" runat="server" CssClass="display-panels">
+                        <asp:Label ID="LabelSchoolAttended" runat="server" Text="-"></asp:Label> 
+                        <asp:LinkButton ID="LinkButtonSchool" runat="server" OnClick="LinkButtonSchool_Click"><span class="glyphicon glyphicon-education"></span> Add/Change your school </asp:LinkButton>
+                    </asp:Panel>
+                    <br />
+                    <asp:Panel ID="PanelEditSchool" runat="server" Visible="False">
+                        <asp:TextBox ID="TextBoxSchoolAttended" runat="server"></asp:TextBox>
+                        <div style="display: inline-block">
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButtonCancelBio_Click">Cancel</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton2" runat="server">Done</asp:LinkButton>
+                    </div>
+                    </asp:Panel>
+                <h5 style="margin-top: 10px"> Works at: </h5>
+                    <asp:Panel ID="PanelWorkedAt" runat="server" CssClass="display-panels">
+                        <asp:Label ID="LabelWorksAt" runat="server" Text="-"></asp:Label>
+                        <asp:LinkButton ID="LinkButtonWork" runat="server" OnClick="LinkButtonWork_Click"><span class="glyphicon glyphicon-briefcase"></span> Add/Change where you work </asp:LinkButton>
+                    </asp:Panel>
+                    <asp:Panel ID="PanelEditWork" runat="server" Visible="False">
+                        <asp:TextBox ID="TextBoxWorkedAt" runat="server"></asp:TextBox>
+                        <div style="display: inline-block">
+                        <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButtonCancelBio_Click">Cancel</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton4" runat="server">Done</asp:LinkButton>
+                    </div>
+                    </asp:Panel>
+                    <br />
+                    
                 </div>
             </div>
         </div>
         <div class="profile_othersideinfo">
-            <h1 style="letter-spacing: 1px; margin-bottom: 12px"> Username </h1>
+            <h1 style="letter-spacing: 1px; margin-bottom: 12px"> <asp:Label ID="LabelUsername" runat="server" Text=""></asp:Label> </h1>
             <h5> STUDENT </h5>
             <h5> 0 votes </h5>
             <h5> <span class="glyphicon glyphicon-folder-close"></span> Wallet: $0.00</h5>
@@ -93,11 +131,22 @@
         <!-- Tab panes -->
         <div class="tab-content" style="padding-top: 20px">
             <div role="tabpanel" class="tab-pane active" id="about">
-                <div style="margin: 15px 0 10px 0; padding: 10px 0 10px 15px; height: 75px; width: 460px; align-content: center; background-color: #e3e3e3">
-                    <p> Hello, I am a new user! </p>
+               
+                <asp:Panel ID="PanelEditBio" runat="server" Visible="False">
+                    <asp:TextBox ID="TextBoxEditBio" runat="server" TextMode="MultiLine" Rows="5" CssClass="edit-bio-textbox"></asp:TextBox>
+                    <div style="display: inline-block">
+                        <asp:LinkButton ID="LinkButtonCancelBio" runat="server" OnClick="LinkButtonCancelBio_Click">Cancel</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButtonSubmitBio" runat="server">Done</asp:LinkButton>
+                    </div>
+                </asp:Panel>
+                <asp:Panel ID="PanelDisplayBio" runat="server">
+                    <div style="margin: 15px 0 10px 0; padding: 10px 0 10px 15px; height: 75px; width: 460px; align-content: center; background-color: #e3e3e3">
+                    <p> Hello, I am a new user! <asp:Label ID="LabelBio" runat="server" Text=""></asp:Label> </p> 
                </div>
-                <asp:LinkButton ID="LinkButtonBio" runat="server"> <span class="glyphicon glyphicon-pencil"></span> Edit Bio </asp:LinkButton>
+                    <asp:LinkButton ID="LinkButtonBio" runat="server" OnClick="LinkButtonBio_Click"> <span class="glyphicon glyphicon-pencil"></span> Edit Bio </asp:LinkButton>
                 <hr />
+                </asp:Panel>
+                
 
                 <h4 style="margin-top: 15px; margin-bottom: 10px"> Contact Info</h4>
                 <p style="font-size: 125%"> Phone No. :  -</p>

@@ -1,0 +1,390 @@
+﻿/*custom font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    /*Image only BG fallback*/
+    /*background = gradient + image pattern combo*/
+}
+
+body {
+    font-family: montserrat, arial, verdana;
+    background: #ffa31a;
+}
+/*form styles*/
+#msform {
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+}
+
+    #msform fieldset {
+        background: white;
+        border: 0 none;
+        border-radius: 3px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        box-sizing: border-box;
+        width: 80%;
+        margin: 0 10%;
+        /*stacking fieldsets above each other*/
+        position: relative;
+    }
+        /*Hide all except first fieldset*/
+        #msform fieldset:not(:first-of-type) {
+            display: none;
+        }
+    /*inputs*/
+    #msform input,
+    #msform textarea {
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2c3e50;
+        font-size: 13px;
+    }
+    /*buttons*/
+    #msform .action-button {
+        width: 100px;
+        background: black;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 1px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+    }
+
+        #msform .action-button:hover,
+        #msform .action-button:focus {
+            box-shadow: 0 0 0 2px white, 0 0 0 3px black;
+        }
+/*headings*/
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+}
+
+    #progressbar li {
+        list-style-type: none;
+        color: white;
+        text-transform: uppercase;
+        font-size: 9px;
+        width: 33.33%;
+        float: left;
+        position: relative;
+    }
+
+        #progressbar li:before {
+            content: counter(step);
+            counter-increment: step;
+            width: 20px;
+            line-height: 20px;
+            display: block;
+            font-size: 10px;
+            color: #333;
+            background: white;
+            border-radius: 3px;
+            margin: 0 auto 5px auto;
+        }
+        /*progressbar connectors*/
+        #progressbar li:after {
+            content: "";
+            width: 100%;
+            height: 2px;
+            background: white;
+            position: absolute;
+            left: -50%;
+            top: 9px;
+            z-index: -1; /*put it behind the numbers*/
+        }
+
+        #progressbar li:first-child:after {
+            /*connector not needed before the first step*/
+            content: none;
+        }
+        /*marking active/completed steps green*/
+        /*The number of the step and the connector before it = green*/
+        #progressbar li.active:before,
+        #progressbar li.active:after {
+            background: black;
+            color: white;
+        }
+
+.cat-container {
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.new-category-card {
+    width: 212px;
+    height: 99px;
+    box-shadow: 0 2px 10px rgba(35, 35, 35, 0.3);
+    border-radius: 4px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-card {
+    width: 212px;
+    height: 49px;
+    box-shadow: 0 2px 10px rgba(35, 35, 35, 0.3);
+    border-radius: 4px;
+    background-color: #fff;
+    display: flex;
+    margin: 5%;
+}
+
+.image-thumbnail {
+    width: 77px;
+    height: 77px;
+    background-color: #d8d8d8;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    margin-left: 11px;
+    margin-right: 0;
+}
+
+.small-image-thumbnail {
+    font-size: 25px;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    margin-left: 11px;
+    margin-right: 0;
+}
+
+.text-container {
+    width: 124px;
+    height: 99px;
+    position: relative;
+}
+
+.small-text-container {
+    width: 124px;
+    height: 49px;
+    position: relative;
+}
+
+.category-title {
+    position: absolute;
+    color: #ffa31a;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 700;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    transition: 0.3s transform ease-in-out;
+}
+
+.small-category-title {
+    position: absolute;
+    color: #212121;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    transition: 0.3s transform ease-in-out;
+    display: block;
+}
+
+.create-button {
+    position: absolute;
+    bottom: 22px;
+    width: 66px;
+    height: 22px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    border-radius: 11px;
+    background-color: #ffa31a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s opacity ease-in-out;
+}
+
+.coming-soon-button {
+    position: absolute;
+    bottom: 22px;
+    width: 120px;
+    height: 22px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    border-radius: 11px;
+    background-color: #d3d3d3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s opacity ease-in-out;
+}
+
+.custom-create-button {
+    position: absolute;
+    right: -60px;
+    bottom: 14px;
+    width: 66px;
+    height: 22px;
+    opacity: 0;
+    border-radius: 11px;
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s opacity ease-in-out;
+}
+
+.create-text {
+    position: absolute;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 700;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    margin-top: 3%;
+    margin-bottom: auto;
+    text-align: center;
+    transition: 0.3s transform ease-in-out;
+}
+
+.coming-soon-text {
+    position: absolute;
+    color: #a3a2a2;
+    text-transform: uppercase;
+    font-family: "Open Sans";
+    font-size: 12px;
+    font-weight: 700;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 12px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    transition: 0.3s transform ease-in-out;
+}
+
+.new-category-card {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+    .new-category-card .image-thumbnail,
+    .new-category-card .text-container {
+        transition: 0.3s;
+    }
+
+    .new-category-card:hover {
+        padding: 4px;
+        width: 216px;
+        height: 103px;
+    }
+
+        .new-category-card:hover .category-title {
+            transform: translateY(-22px);
+        }
+
+        .new-category-card:hover .create-button {
+            opacity: 1;
+        }
+
+        .new-category-card:hover .coming-soon-button {
+            opacity: 1;
+        }
+
+        .new-category-card:hover .image-thumbnail,
+        .new-category-card:hover .text-container {
+            transform: scale(0.9);
+        }
+
+.custom-card {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+    .custom-card .image-thumbnail,
+    .custom-card .text-container {
+        transition: 0.3s;
+    }
+
+    .custom-card:hover {
+        width: 234px;
+    }
+
+        .custom-card:hover .category-title {
+            transform: translateY(-22px);
+        }
+
+        .custom-card:hover .custom-create-button {
+            opacity: 1;
+        }
+
+        .custom-card:hover .coming-soon-button {
+            opacity: 1;
+        }
+
+        .custom-card:hover .image-thumbnail,
+        .custom-card:hover .text-container {
+            transform: scale(0.9);
+        }
+
+.small-image-thumbnail i {
+    color: #212121;
+}

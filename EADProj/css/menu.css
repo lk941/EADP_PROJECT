@@ -1,0 +1,101 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700|Lato:400,700);
+
+@media(min-width:768px) {
+    .navbar-fixed-top {
+        padding: 25px 0;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        font-size: 2em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-fixed-top.navbar-shrink {
+        padding: 10px 0;
+    }
+
+    .navbar-fixed-top.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+}
+
+.navbar {
+    text-transform: uppercase;
+    font-family: 'Ubuntu',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.navbar-color {
+    background-color: #212121;
+}
+
+.navbar a:focus {
+    outline: 0;
+}
+
+.navbar .navbar-nav {
+    letter-spacing: 1px;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #fdd200;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background-color: #fdd200;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #fdd200;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #212121;
+    background-color: #fdd200;
+}
+
+.navbar .navbar-nav li a:focus {
+    outline: 0;
+}
+
+.navbar-default,
+.navbar-inverse {
+    border: 0;
+}
+
+#mainLogo {
+    position:absolute;
+    width:6vh;
+    height:6vh;
+}
+
+.menuBtn {
+    color: white !important;
+    background: none !important;
+    border: none !important;
+    margin: 0 auto !important;
+    padding: 0 15px !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+ul.menuUl li a {
+    background-color: #ffa31a !important;
+    border-color: #ffa31a !important;
+    color: black;
+}
